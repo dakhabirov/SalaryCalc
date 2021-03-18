@@ -1,0 +1,28 @@
+﻿@model IQueryable<Product>
+
+<div>
+    <h1>Товары</h1>
+    <div class="nav-link active">
+        <a asp-controller="Products" asp-action="Edit" asp-route-id="">Добавить</a>
+    </div>
+    <div>
+        @if (Model.Any())
+        {
+            <div>
+                @foreach (Product product in Model)
+                {
+                    <div>
+                        <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id">
+                            @($"{product.ProductName}")
+                        </a>
+                        <a asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">Редактировать</a>
+                        <form style="display: inline-block" id="form-@product.Id" asp-controller="Products" asp-action="Delete" method="post">
+                            <input type="hidden" name="id" value="@product.Id" />
+                            <a href="#" onclick="document.getElementById('form-@product.Id').submit();">Удалить</a>
+                        </form>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+</div>

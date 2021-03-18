@@ -1,0 +1,29 @@
+﻿@model IQueryable<User>
+
+<div>
+    <h1>Пользователи</h1>
+    <div class="nav-link active">
+        <a asp-area="Admin" asp-controller="Users" asp-action="Edit" asp-route-id="">Добавить</a>
+    </div>
+    <div>
+        @if (Model.Any())
+        {
+            <div>
+                @foreach (User user in Model)
+                {
+                <div>
+                    <a asp-area="" asp-controller="Users" asp-action="Index" asp-route-id="@user.Id">
+                        @($"{user.UserName}")
+                    </a>
+
+                    <a asp-area="Admin" asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id">Редактировать</a>
+                    <form style="display: inline-block" id="form-@user.Id" asp-area="Admin" asp-controller="Users" asp-action="Delete" method="post">
+                        <input type="hidden" name="id" value="@user.Id" />
+                        <a href="#" onclick="document.getElementById('form-@user.Id').submit();">Удалить</a>
+                    </form>
+                </div>
+                }
+            </div>
+        }
+    </div>
+</div>

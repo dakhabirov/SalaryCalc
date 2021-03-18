@@ -1,0 +1,29 @@
+﻿@model LoginViewModel
+
+@{
+    Layout = "";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@Config.CompanyName Вход в личный кабинет</title>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="text-center">
+    <main class="form-signin">
+        <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewBag.returnUrl" method="post">
+            <img class="mb-4" src="/img/yotaicon.png" alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">Вход в личный кабинет</h1>
+            <div asp-validation-summary="ModelOnly"></div>
+            <input asp-for="UserName" class="form-control" placeholder="Имя пользователя" autofocus="">
+            <input asp-for="Password" type="password" class="form-control" placeholder="Пароль">
+            <input asp-for="IsRemember" />
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+            <p class="mt-5 mb-3 text-muted">© 2021</p>
+            <input hidden asp-for="ReturnUrl">
+        </form>
+    </main>
+</body>
+</html>
