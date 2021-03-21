@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SalaryCalculator.ViewModels
+namespace SalaryCalc.ViewModels
 {
     public class LoginViewModel
     {

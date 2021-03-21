@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SalaryCalculator.Models;
+using SalaryCalc.Models;
 
-namespace SalaryCalculator.Controllers
+namespace SalaryCalc.Controllers
 {
-    [Area("Admin")]
+    [Area("admin")]
     [Authorize(Policy = "Administrator")]
     public class UsersController : Controller
     {

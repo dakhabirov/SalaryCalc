@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 
-namespace SalaryCalculator.Models
+namespace SalaryCalc.Models
 {
     public class AppDbContext : IdentityDbContext<IdentityUser>
     {

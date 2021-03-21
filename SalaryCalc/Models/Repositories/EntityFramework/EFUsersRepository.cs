@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SalaryCalculator.Models.Repositories.Interfaces;
+using SalaryCalc.Models.Repositories.Interfaces;
 using System.Linq;
 
-namespace SalaryCalculator.Models.Repositories.EntityFramework
+namespace SalaryCalc.Models.Repositories.EntityFramework
 {
     public class EFUsersRepository : IUsersRepository
     {

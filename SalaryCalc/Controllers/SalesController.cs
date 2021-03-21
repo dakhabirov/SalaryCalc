@@ -1,8 +1,14 @@
-﻿
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
-namespace SalaryCalculator.Controllers
+namespace SalaryCalc.Controllers
 {
-    public class SalesController
+    [Authorize(Policy = "manager")]
+    public class SalesController : Controller
     {
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

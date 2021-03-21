@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SalaryCalculator.Models;
-using SalaryCalculator.Models.Repositories.EntityFramework;
-using SalaryCalculator.Models.Repositories.Interfaces;
-using SalaryCalculator.Service;
+using SalaryCalc.Models;
+using SalaryCalc.Models.Repositories.EntityFramework;
+using SalaryCalc.Models.Repositories.Interfaces;
+using SalaryCalc.Service;
 using System.Security.Claims;
 
-namespace SalaryCalculator
+namespace SalaryCalc
 {
     public class Startup
     {
@@ -29,6 +29,7 @@ namespace SalaryCalculator
 
             // подключаем нужный функционал приложения в качестве сервисов (через внедрение зависимостей)
             services.AddTransient<IUsersRepository, EFUsersRepository>();   // связываем интерфейс с его реализацией
+            services.AddTransient<ISalesRepository, EFSalesRepository>();
             services.AddTransient<IProductsRepository, EFProductsRepository>();
             services.AddTransient<DataManager>();
 

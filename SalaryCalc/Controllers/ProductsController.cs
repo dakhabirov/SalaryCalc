@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SalaryCalculator.Models;
+using SalaryCalc.Models;
 using System;
 
-namespace SalaryCalculator.Controllers
+namespace SalaryCalc.Controllers
 {
     [Authorize(Policy = "Administrator")]
     public class ProductsController : Controller

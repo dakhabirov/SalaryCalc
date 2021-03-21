@@ -1,6 +1,6 @@
 ﻿
 
-namespace SalaryCalculator.Service
+namespace SalaryCalc.Service
 {
     /// <summary>
     /// Конфигурация.

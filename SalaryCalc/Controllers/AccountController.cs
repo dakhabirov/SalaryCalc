@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using SalaryCalculator.Models;
-using SalaryCalculator.ViewModels;
+using SalaryCalc.Models;
+using SalaryCalc.ViewModels;
 
-namespace SalaryCalculator.Controllers
+namespace SalaryCalc.Controllers
 {
     public class AccountController : Controller
     {
@@ -15,6 +15,12 @@ namespace SalaryCalculator.Controllers
         {
             _userManager = userManager;
             _signInManager = signInManager;
+        }
+
+        [Authorize]
+        public IActionResult Index()
+        {
+            return View();
         }
 
         [AllowAnonymous]

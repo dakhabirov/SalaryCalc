@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace SalaryCalculator.Models.Repositories.Interfaces
+namespace SalaryCalc.Models.Repositories.Interfaces
 {
     public interface IProductsRepository
     {

@@ -1,7 +1,10 @@
 ﻿<div>
     <h1>Панель администратора</h1>
     <div>
-        <a class="nav-link active" asp-area="Admin" asp-controller="Users" asp-action="Index">Пользователи</a>
+        <a asp-area="admin" asp-controller="Users" asp-action="Index" class="nav-link active">Пользователи</a>
     </div>
-    <a class="nav-link active" asp-area="" asp-controller="Account" asp-action="LogOff" method="post">Выйти из учетной записи</a>
+    <div>
+        <a asp-area="admin" asp-controller="Positions" asp-action="Index" class="nav-link active">Должности</a>
+    </div>
+    <a asp-area="default" asp-controller="Account" asp-action="LogOff" method="post" class="nav-link active">Выйти из учетной записи</a>
 </div>

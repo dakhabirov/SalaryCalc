@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SalaryCalculator.Models
+namespace SalaryCalc.Models
 {
     /// <summary>
     /// Проданные товары или услуги.

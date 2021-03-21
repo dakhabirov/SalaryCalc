@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SalaryCalculator.Models
+namespace SalaryCalc.Models
 {
     public class Product
     {

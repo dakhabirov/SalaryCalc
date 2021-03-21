@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SalaryCalc.Areas.Admin.Controllers
 {
-    [Area("Admin")]
+    [Area("admin")]
     [Authorize(Policy = "Administrator")]
-    public class HomeController : Controller
+    public class PositionsController : Controller
     {
         public IActionResult Index()
         {

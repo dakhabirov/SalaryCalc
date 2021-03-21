@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SalaryCalculator.Models
+namespace SalaryCalc.Models
 {
     /// <summary>
     /// Продажа.

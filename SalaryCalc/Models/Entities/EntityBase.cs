@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SalaryCalculator.Domain.Entities
+namespace SalaryCalc.Domain.Entities
 {
     public abstract class EntityBase
     {

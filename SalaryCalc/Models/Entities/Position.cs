@@ -1,8 +1,7 @@
-﻿using SalaryCalculator.Domain.Entities;
-using System;
+﻿using SalaryCalc.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace SalaryCalculator.Models
+namespace SalaryCalc.Models
 {
     public class Position : EntityBase
     {
