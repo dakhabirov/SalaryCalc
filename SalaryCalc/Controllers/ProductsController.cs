@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SalaryCalc.Models;
 using System;
+using System.IO;
 
 namespace SalaryCalc.Controllers
 {
@@ -9,10 +12,12 @@ namespace SalaryCalc.Controllers
     public class ProductsController : Controller
     {
         private readonly DataManager dataManager;
+        private readonly IWebHostEnvironment hostEnvironment;
 
-        public ProductsController(DataManager dataManager)
+        public ProductsController(DataManager dataManager, IWebHostEnvironment hostEnvironment)
         {
             this.dataManager = dataManager;
+            this.hostEnvironment = hostEnvironment;
         }
 
         public IActionResult Index(Guid id)
@@ -21,21 +26,28 @@ namespace SalaryCalc.Controllers
             {
                 return View("Show", dataManager.Products.GetProductById(id));
             }
- 
+
             return View(dataManager.Products.GetProducts());
         }
 
         public IActionResult Edit(Guid id)
         {
-            var product = id == null ? new Product() : dataManager.Products.GetProductById(id);
+            var product = id == default ? new Product() : dataManager.Products.GetProductById(id);
             return View(product);
         }
 
         [HttpPost]
-        public IActionResult Edit(Product product)
+        public IActionResult Edit(Product product, IFormFile imageFile)
         {
             if (ModelState.IsValid)
             {
+                if (imageFile != null)
+                {
+                    product.ImagePath = imageFile.FileName;
+                    using var stream = new FileStream(Path.Combine(hostEnvironment.WebRootPath, "img/products/", imageFile.FileName), FileMode.Create);
+                    imageFile.CopyTo(stream);
+                }
+
                 dataManager.Products.SaveProduct(product);
                 return RedirectToAction(nameof(ProductsController.Index));
             }

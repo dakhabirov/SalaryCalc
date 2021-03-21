@@ -26,7 +26,7 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
 
         public Product GetProductByProductName(string productName)
         {
-            return context.Products.FirstOrDefault(p => p.ProductName == productName);
+            return context.Products.FirstOrDefault(p => p.Name == productName);
         }
 
         public void SaveProduct(Product product)

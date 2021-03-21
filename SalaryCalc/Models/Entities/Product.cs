@@ -1,29 +1,11 @@
-﻿using System;
+﻿using SalaryCalc.Domain.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.Models
 {
-    public class Product
+    public class Product : EntityBase
     {
-        /// <summary>
-        /// Идентификатор.
-        /// </summary>
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Наименование.
-        /// </summary>
-        [Required]
-        [MaxLength(100)]
-        [Display(Name="Наименование")]
-        public string ProductName { get; set; }
-
-        /// <summary>
-        /// Изображение.
-        /// </summary>
-        [Display(Name = "Изображение")]
-        public string ProductImagePath { get; set; }
-
         /// <summary>
         /// Категория.
         /// </summary>

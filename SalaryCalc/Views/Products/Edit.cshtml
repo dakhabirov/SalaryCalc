@@ -1,17 +1,15 @@
 ﻿@model Product
-@{
-    string strTitle = "Редактировать запись";
-    ViewBag.Title = strTitle;
-}
+@{ string strTitle = "Редактировать запись";
+    ViewBag.Title = strTitle; }
 
 <div>
     <h2>@strTitle</h2>
     <div>
-        <form asp-controller="Products" asp-action="Edit" method="post">
+        <form asp-controller="Products" asp-action="Edit" method="post" enctype="multipart/form-data">
             <div>
-                <label asp-for="ProductName"></label>
-                <input asp-for="ProductName" />
-                <span asp-validation-for="ProductName"></span>
+                <label asp-for="Name"></label>
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
             </div>
             <div>
                 <label asp-for="Category"></label>
@@ -27,6 +25,13 @@
                 <label asp-for="IsFavorite"></label>
                 <input asp-for="IsFavorite" />
                 <span asp-validation-for="IsFavorite"></span>
+            </div>
+            <div>
+                <label asp-for="ImagePath"></label>
+                <input type="file" name="imageFile" id="imageFile" />
+                <div>
+                    <img class="img-block" src="~/img/products/@Model.ImagePath" />
+                </div>
             </div>
             <input type="submit" value="Сохранить" />
         </form>
