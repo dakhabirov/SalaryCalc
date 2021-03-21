@@ -8,21 +8,17 @@
     <div>
         @if (Model.Any())
         {
-            <div>
+            <ul>
                 @foreach (Product product in Model)
                 {
-                    <div>
+                    <li>
                         <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id">
                             @($"{product.ProductName}")
                         </a>
-                        <a asp-controller="Products" asp-action="Edit" asp-route-id="@product.Id">Редактировать</a>
-                        <form style="display: inline-block" id="form-@product.Id" asp-controller="Products" asp-action="Delete" method="post">
-                            <input type="hidden" name="id" value="@product.Id" />
-                            <a href="#" onclick="document.getElementById('form-@product.Id').submit();">Удалить</a>
-                        </form>
-                    </div>
+                        <p>@product.Price</p>
+                    </li>
                 }
-            </div>
+            </ul>
         }
     </div>
 </div>

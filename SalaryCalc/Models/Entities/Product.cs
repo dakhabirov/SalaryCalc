@@ -19,6 +19,12 @@ namespace SalaryCalc.Models
         public string ProductName { get; set; }
 
         /// <summary>
+        /// Изображение.
+        /// </summary>
+        [Display(Name = "Изображение")]
+        public string ProductImagePath { get; set; }
+
+        /// <summary>
         /// Категория.
         /// </summary>
         [MaxLength(50)]

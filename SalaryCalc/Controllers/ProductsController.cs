@@ -15,8 +15,13 @@ namespace SalaryCalc.Controllers
             this.dataManager = dataManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(Guid id)
         {
+            if (id != default)
+            {
+                return View("Show", dataManager.Products.GetProductById(id));
+            }
+ 
             return View(dataManager.Products.GetProducts());
         }
 

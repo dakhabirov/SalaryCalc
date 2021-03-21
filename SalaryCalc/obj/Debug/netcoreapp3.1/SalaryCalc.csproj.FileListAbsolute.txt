@@ -192,3 +192,4 @@ C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Sa
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Sales\Index.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Positions\Index.cshtml.g.cs
+C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Products\Show.cshtml.g.cs

@@ -1,0 +1,17 @@
+﻿@model Product
+
+<div>
+    <div>
+        <img src="~/img/@Model.ProductImagePath" />
+    </div>
+    <h1>@Model.ProductName</h1>
+    <p>@Model.Price</p>
+    <p>@Model.Category</p>
+    <p>@Model.IsFavorite</p>
+
+    <a asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <form style="display: inline-block" id="form-@Model.Id" asp-controller="Products" asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Удалить</a>
+    </form>
+</div>
