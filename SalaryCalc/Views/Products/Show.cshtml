@@ -1,16 +1,11 @@
-﻿@model Product
+﻿@model Position
 
 <div>
-    <div class="img-block">
-        <img src="~/img/products/@Model.ImagePath" />
-    </div>
     <h2>@Model.Name</h2>
-    <p>@Model.Price</p>
-    <p>@Model.Category</p>
-    <p>@Model.IsFavorite</p>
+    <h2>@Model.HourlyRate</h2>
 
-    <a asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
-    <form style="display: inline-block" id="form-@Model.Id" asp-controller="Products" asp-action="Delete" method="post">
+    <a asp-controller="Positions" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <form style="display: inline-block" id="form-@Model.Id" asp-controller="Positions" asp-action="Delete" method="post">
         <input type="hidden" name="id" value="@Model.Id" />
         <a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Удалить</a>
     </form>

@@ -1,1 +1,21 @@
-﻿<h1>Продажи</h1>
+﻿@model IQueryable<Sale>
+
+<div>
+    <h1>Мои продажи</h1>
+    <div class="nav-link active">
+        <a asp-controller="Sales" asp-action="Edit" asp-route-id="">Добавить</a>
+    </div>
+    <div>
+        @if (Model.Any())
+        {
+            <ul>
+                @foreach (Sale sale in Model)
+                {
+                    <li>
+                        <a asp-controller="Sales" asp-action="Index" asp-route-id="@sale.Id">@sale.SaleDate</a>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

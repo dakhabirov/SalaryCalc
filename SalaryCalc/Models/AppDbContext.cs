@@ -32,6 +32,7 @@ namespace SalaryCalc.Models
             // генерируем гуиды (уникальные идентификаторы)
             Guid adminRoleGuid = Guid.NewGuid();
             Guid managerRoleGuid = Guid.NewGuid();
+            Guid salaryGuid = Guid.NewGuid();
             Guid adminGuid = Guid.NewGuid();
             Guid managerGuid = Guid.NewGuid();
 

@@ -26,6 +26,6 @@ namespace SalaryCalc.Models
         /// <summary>
         /// Коллекция проданных товаров.
         /// </summary>
-        public virtual ICollection<SaleProduct> Sale_Products { get; set; }
+        public virtual ICollection<SaleProduct> SaleProducts { get; set; }
     }
 }

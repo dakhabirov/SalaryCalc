@@ -21,9 +21,9 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <summary>
         /// Получить товар по его наименованию.
         /// </summary>
-        /// <param name="productName">Наименование товара.</param>
+        /// <param name="Name">Наименование товара.</param>
         /// <returns>Товар.</returns>
-        Product GetProductByProductName(string productName);
+        Product GetProductByName(string Name);
 
         /// <summary>
         /// Сохранить изменения.

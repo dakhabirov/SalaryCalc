@@ -10,8 +10,18 @@ namespace SalaryCalc.Models
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Сумма заработной платы.
+        /// </summary>
+        public double Sum { get; set; }
+
+        /// <summary>
+        /// Идентификатор пользователя.
+        /// </summary>
+        public string UserId { get; set; }
+
+        /// <summary>
         /// Дата выплаты заработной платы.
         /// </summary>
-        public DateTime SalaryDate { get; set; }
+        public DateTime Date { get; set; }
     }
 }

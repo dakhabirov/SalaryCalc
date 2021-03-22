@@ -8,7 +8,6 @@ using System.IO;
 
 namespace SalaryCalc.Controllers
 {
-    [Authorize(Policy = "Administrator")]
     public class ProductsController : Controller
     {
         private readonly DataManager dataManager;
@@ -30,6 +29,7 @@ namespace SalaryCalc.Controllers
             return View(dataManager.Products.GetProducts());
         }
 
+        [Authorize(Policy = "Administrator")]
         public IActionResult Edit(Guid id)
         {
             var product = id == default ? new Product() : dataManager.Products.GetProductById(id);
@@ -37,6 +37,7 @@ namespace SalaryCalc.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "Administrator")]
         public IActionResult Edit(Product product, IFormFile imageFile)
         {
             if (ModelState.IsValid)
@@ -55,6 +56,7 @@ namespace SalaryCalc.Controllers
         }
 
         [HttpPost]
+        [Authorize(Policy = "Administrator")]
         public IActionResult Delete(Guid id)
         {
             dataManager.Products.DeleteProduct(id);

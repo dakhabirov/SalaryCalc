@@ -1,1 +1,21 @@
-﻿<h1>Должности</h1>
+﻿@model IQueryable<Position>
+
+<div>
+    <h1>Должности</h1>
+    <div class="nav-link active">
+        <a asp-area="admin" asp-controller="Positions" asp-action="Edit" asp-route-id="">Добавить</a>
+    </div>
+    <div>
+        @if (Model.Any())
+        {
+            <ul>
+                @foreach (Position position in Model)
+                {
+                <li>
+                    <a asp-area="admin" asp-controller="Positions" asp-action="Index" asp-route-id="@position.Id">@position.Name</a>
+                </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

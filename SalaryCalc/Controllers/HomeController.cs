@@ -9,8 +9,7 @@ namespace SalaryCalc.Controllers
     {
         public IActionResult Index(User user)
         {
-            ViewBag.Name = User.Identity.Name;
-            return View(user.Salaries);
+            return View(user);
         }
     }
 }

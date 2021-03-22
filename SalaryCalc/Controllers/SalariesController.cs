@@ -1,14 +1,28 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SalaryCalc.Models;
+using System;
 
 namespace SalaryCalc.Controllers
 {
     [Authorize(Policy = "Manager")]
     public class SalariesController : Controller
     {
-        public IActionResult Index()
+        private readonly DataManager dataManager;
+
+        public SalariesController(DataManager dataManager)
         {
-            return View();
+            this.dataManager = dataManager;
+        }
+
+        public IActionResult Index(string userId, DateTime date)
+        {
+            if (date != default)
+            {
+                return View("Show", dataManager.Users.GetSalaryByDate(userId, date));
+            }
+
+            return View(dataManager.Users.GetSalaries(userId));
         }
     }
 }

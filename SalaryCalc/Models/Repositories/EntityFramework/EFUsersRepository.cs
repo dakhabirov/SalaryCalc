@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SalaryCalc.Models.Repositories.Interfaces;
+using System;
 using System.Linq;
 
 namespace SalaryCalc.Models.Repositories.EntityFramework
@@ -26,6 +27,17 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
         public User GetUserByUserName(string userName)
         {
             return context.Users.FirstOrDefault(u => u.UserName == userName);
+        }
+
+
+        public IQueryable<Salary> GetSalaries(string id)
+        {
+            return context.Salaries.Where(s => s.UserId == id);
+        }
+
+        public Salary GetSalaryByDate(string userId, DateTime date)
+        {
+            return context.Salaries.Where(s => s.UserId == userId & s.Date == date).FirstOrDefault();
         }
 
         public void SaveUser(User user)
