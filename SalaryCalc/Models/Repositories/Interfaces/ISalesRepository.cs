@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalaryCalc.Models.Entities;
+using System;
 using System.Linq;
 
 namespace SalaryCalc.Models.Repositories.Interfaces

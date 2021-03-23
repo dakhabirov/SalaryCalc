@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 using System;
 
 namespace SalaryCalc.Areas.Admin.Controllers

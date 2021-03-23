@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 
 namespace SalaryCalc.Controllers
 {

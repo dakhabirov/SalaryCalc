@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SalaryCalc.Models
+namespace SalaryCalc.Models.Entities
 {
     public class User: IdentityUser
     {

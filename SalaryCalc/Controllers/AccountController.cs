@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 using SalaryCalc.ViewModels;
 
 namespace SalaryCalc.Controllers

@@ -1,7 +1,7 @@
 ﻿using SalaryCalc.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
-namespace SalaryCalc.Models
+namespace SalaryCalc.Models.Entities
 {
     public class Product : EntityBase
     {

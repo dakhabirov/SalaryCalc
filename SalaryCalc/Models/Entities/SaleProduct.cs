@@ -1,10 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 
-namespace SalaryCalc.Models
+namespace SalaryCalc.Models.Entities
 {
-    /// <summary>
-    /// Проданные товары или услуги.
-    /// </summary>
     public class SaleProduct
     {
         /// <summary>
@@ -13,13 +11,28 @@ namespace SalaryCalc.Models
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Количество.
+        /// Идентификатор продажи.
+        /// </summary>
+        public Guid SaleId { get; set; }
+
+        /// <summary>
+        /// Идентификатор товара.
+        /// </summary>
+        public Guid ProductId { get; set; }
+
+        /// <summary>
+        /// Количество товара.
         /// </summary>
         public int Amount { get; set; }
 
         /// <summary>
+        /// Продажа. 
+        /// </summary>
+        public virtual Sale sale { get; set; }
+
+        /// <summary>
         /// Товар. 
         /// </summary>
-        public virtual Product Product { get; set; }
+        public virtual Product product { get; set; }
     }
 }

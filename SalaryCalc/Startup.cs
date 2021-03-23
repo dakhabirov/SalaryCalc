@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 using SalaryCalc.Models.Repositories.EntityFramework;
 using SalaryCalc.Models.Repositories.Interfaces;
 using SalaryCalc.Service;
@@ -96,7 +97,7 @@ namespace SalaryCalc
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapDefaultControllerRoute();  // маршрут по умолчанию
             });
         }
     }

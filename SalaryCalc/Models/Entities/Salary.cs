@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SalaryCalc.Models
+namespace SalaryCalc.Models.Entities
 {
     public class Salary
     {

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using SalaryCalc.Models.Entities;
 using System;
 
 namespace SalaryCalc.Models
@@ -14,13 +15,13 @@ namespace SalaryCalc.Models
 
         public DbSet<User> Users { get; set; }
 
-        public DbSet<Sale> Sales { get; set; }
-
-        public DbSet<Product> Products { get; set; }
-
         public DbSet<Position> Positions { get; set; }
 
         public DbSet<Salary> Salaries { get; set; }
+
+        public DbSet<Sale> Sales { get; set; }
+
+        public DbSet<Product> Products { get; set; }
 
         public DbSet<SaleProduct> SaleProducts { get; set; }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace SalaryCalc.Models
+namespace SalaryCalc.Models.Entities
 {
     public class Position
     {

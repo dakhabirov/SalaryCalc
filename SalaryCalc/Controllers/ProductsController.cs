@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 using System;
 using System.IO;
 
