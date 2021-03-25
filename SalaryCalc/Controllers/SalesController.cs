@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace SalaryCalc.Controllers
 {
@@ -39,15 +39,16 @@ namespace SalaryCalc.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Sale sale, List<Product> products)
+        public IActionResult Edit(Sale sale, Guid[] productIds)
         {
             if (ModelState.IsValid)
             {
                 dataManager.Sales.SaveSale(sale);
-                foreach (Product product in products)
+                foreach (Guid productId in productIds)
                 {
-                    dataManager.SaleProducts.SaveSaleProducts(sale.Id, product.Id, 1);
+                    dataManager.SaleProducts.SaveSaleProducts(sale.Id, productId, 1);
                 }
+                context.SaveChanges();
                 return RedirectToAction(nameof(SalesController.Index));
             }
             return View(sale);

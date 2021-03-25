@@ -1,1 +1,17 @@
-﻿
+﻿@model Sale
+
+<div>
+    <h2>@Model.SaleDate</h2>
+    <ul>
+        @foreach (SaleProduct saleProduct in Model.SaleProducts)
+        {
+            <li>@saleProduct.Product.Name</li>
+        }
+    </ul>
+
+    <a asp-controller="Sales" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <form style="display: inline-block" id="form-@Model.Id" asp-controller="Sales" asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Удалить</a>
+    </form>
+</div>
