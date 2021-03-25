@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 
 namespace SalaryCalc.Models.Entities
 {
@@ -28,11 +27,11 @@ namespace SalaryCalc.Models.Entities
         /// <summary>
         /// Продажа. 
         /// </summary>
-        public virtual Sale sale { get; set; }
+        public virtual Sale Sale { get; set; }
 
         /// <summary>
         /// Товар. 
         /// </summary>
-        public virtual Product product { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

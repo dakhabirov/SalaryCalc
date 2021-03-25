@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 
 namespace SalaryCalc.Controllers
@@ -20,7 +19,7 @@ namespace SalaryCalc.Controllers
             this.context = context;
             this.dataManager = dataManager;
         }
-        
+
         public IActionResult Index(Guid id)
         {
             if (id != default)
@@ -34,17 +33,21 @@ namespace SalaryCalc.Controllers
         public IActionResult Edit(Guid id)
         {
             var sale = id == default ? new Sale() : dataManager.Sales.GetSaleById(id);
-            MultiSelectList products = new SelectList(dataManager.Products.GetProducts(), "Name", "Name");
+            MultiSelectList products = new MultiSelectList(dataManager.Products.GetProducts(), "Id", "Name");
             ViewBag.Products = products;
             return View(sale);
         }
 
         [HttpPost]
-        public IActionResult Edit(Sale sale)
+        public IActionResult Edit(Sale sale, List<Product> products)
         {
             if (ModelState.IsValid)
             {
                 dataManager.Sales.SaveSale(sale);
+                foreach (Product product in products)
+                {
+                    dataManager.SaleProducts.SaveSaleProducts(sale.Id, product.Id, 1);
+                }
                 return RedirectToAction(nameof(SalesController.Index));
             }
             return View(sale);

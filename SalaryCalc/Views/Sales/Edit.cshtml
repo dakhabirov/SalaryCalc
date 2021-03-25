@@ -9,9 +9,7 @@
                 <input type="datetime" asp-for="SaleDate" />
                 <span asp-validation-for="SaleDate"></span>
             </div>
-            <div>
-                @Html.ListBox("SaleProducts", ViewBag.Products as MultiSelectList)
-            </div>
+            @Html.ListBox("SaleProducts", ViewBag.Products as MultiSelectList)
             <input type="submit" value="Сохранить" />
         </form>
     </div>

@@ -35,13 +35,13 @@ using SalaryCalc.ViewModels;
 #nullable disable
 #nullable restore
 #line 5 "C:\Projects\dotnet\ASP.NET Core\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
-using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d0a1f7d3662941152086a4d49e45294a5a4805c4", @"/Views/Account/AccessDenied.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3ae2490e9c998b4cf66490f54cc87e787c15e48c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5575d19220ae8aeea1de8472fe159f38474590df", @"/Views/_ViewImports.cshtml")]
     public class Views_Account_AccessDenied : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-controller", "Controller", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -79,7 +79,7 @@ Write(ViewBag.Name);
 #line hidden
 #nullable disable
             WriteLiteral("\n</p>\n\n");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0a1f7d3662941152086a4d49e45294a5a4805c44370", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0a1f7d3662941152086a4d49e45294a5a4805c44379", async() => {
                 WriteLiteral("Выйти из учетной запси");
             }
             );

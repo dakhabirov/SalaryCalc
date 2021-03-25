@@ -35,13 +35,13 @@ using SalaryCalc.ViewModels;
 #nullable disable
 #nullable restore
 #line 5 "C:\Projects\dotnet\ASP.NET Core\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
-using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"9f8d95c628686e5d218222db2a343d1f645c7073", @"/Views/Shared/HeaderPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3ae2490e9c998b4cf66490f54cc87e787c15e48c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5575d19220ae8aeea1de8472fe159f38474590df", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_HeaderPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("asp-area", "default", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -80,7 +80,7 @@ using SalaryCalc.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             WriteLiteral("<header>\n    <nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n        <div class=\"container-fluid\">\n            ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c70736827", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c70736836", async() => {
 #nullable restore
 #line 4 "C:\Projects\dotnet\ASP.NET Core\SalaryCalc\SalaryCalc\Views\Shared\HeaderPartial.cshtml"
                                                                                            Write(Config.CompanyName);
@@ -114,7 +114,7 @@ using SalaryCalc.Models;
                 <ul class=""navbar-nav me-auto mb-2 mb-md-0"">
                     <li class=""nav-item"">
                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c70739218", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c70739227", async() => {
                 WriteLiteral("Главная");
             }
             );
@@ -136,7 +136,7 @@ using SalaryCalc.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                    </li>\n                    <li class=\"nav-item\">\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c707311040", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c707311049", async() => {
                 WriteLiteral("Мой профиль");
             }
             );
@@ -158,7 +158,7 @@ using SalaryCalc.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                    </li>\n                    <li class=\"nav-item\">\n                        ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c707312867", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c707312876", async() => {
                 WriteLiteral("Панель администратора");
             }
             );
@@ -180,7 +180,7 @@ using SalaryCalc.Models;
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\n                    </li>\n                </ul>\n                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c707314674", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f8d95c628686e5d218222db2a343d1f645c707314683", async() => {
                 WriteLiteral("\n                    <input class=\"form-control me-2\" type=\"search\" placeholder=\"Search\" aria-label=\"Search\">\n                    <button class=\"btn btn-outline-success\" type=\"submit\">Search</button>\n                ");
             }
             );

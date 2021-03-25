@@ -15,6 +15,11 @@ namespace SalaryCalc.Models.Entities
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Идентификатор.
+        /// </summary>
+        public string UserId { get; set; }
+
+        /// <summary>
         /// Дата продажи.
         /// </summary>
         [Display(Name = "Дата и время продажи")]
@@ -24,5 +29,10 @@ namespace SalaryCalc.Models.Entities
         /// Пользователь.
         /// </summary>
         public virtual User User { get; set; }
+
+        /// <summary>
+        /// Коллекция проданных товаров.
+        /// </summary>
+        public virtual ICollection<SaleProduct> SaleProducts { get; set; }
     }
 }

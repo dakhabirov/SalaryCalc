@@ -35,13 +35,13 @@ using SalaryCalc.ViewModels;
 #nullable disable
 #nullable restore
 #line 5 "C:\Projects\dotnet\ASP.NET Core\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
-using SalaryCalc.Models;
+using SalaryCalc.Models.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"30797afcbe4c6d6e701d8006bdf6a0adef4e9172", @"/Views/Shared/FooterPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3ae2490e9c998b4cf66490f54cc87e787c15e48c", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5575d19220ae8aeea1de8472fe159f38474590df", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_FooterPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

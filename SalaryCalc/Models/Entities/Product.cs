@@ -1,4 +1,5 @@
 ﻿using SalaryCalc.Domain.Entities;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.Models.Entities
@@ -21,7 +22,12 @@ namespace SalaryCalc.Models.Entities
         /// <summary>
         /// Определяет, является ли товар избранным.
         /// </summary>
-        [Display(Name = "Товар YOTA")]
+        [Display(Name = "Избранный товар")]
         public bool IsFavorite { get; set; }
+
+        /// <summary>
+        /// Коллекция проданных товаров.
+        /// </summary>
+        public virtual ICollection<SaleProduct> SaleProducts { get; set; }
     }
 }

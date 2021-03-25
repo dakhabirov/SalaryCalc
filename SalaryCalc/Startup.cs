@@ -30,9 +30,10 @@ namespace SalaryCalc
 
             // подключаем нужный функционал приложения в качестве сервисов (через внедрение зависимостей)
             services.AddTransient<IUsersRepository, EFUsersRepository>();   // связываем интерфейс с его реализацией
+            services.AddTransient<IPositionsRepository, EFPositionsRepository>();
             services.AddTransient<IProductsRepository, EFProductsRepository>();
             services.AddTransient<ISalesRepository, EFSalesRepository>();
-            services.AddTransient<IPositionsRepository, EFPositionsRepository>();
+            services.AddTransient<ISaleProductsRepository, EFSaleProductsRepository>();
             services.AddTransient<DataManager>();
 
             // подключаем контекст БД
