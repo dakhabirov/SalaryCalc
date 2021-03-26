@@ -4,10 +4,11 @@
     <h2>Редактировать запись</h2>
     <div>
         <form asp-controller="Sales" asp-action="Edit" method="post">
+            <input type="hidden" asp-for="UserId" />
             <div>
-                <label asp-for="SaleDate"></label>
-                <input type="datetime" asp-for="SaleDate" />
-                <span asp-validation-for="SaleDate"></span>
+                <label asp-for="DateAdded"></label>
+                <input type="datetime" asp-for="DateAdded" />
+                <span asp-validation-for="DateAdded"></span>
             </div>
             @Html.ListBox("productIds", ViewBag.Products as MultiSelectList)
             <input type="submit" value="Сохранить" />

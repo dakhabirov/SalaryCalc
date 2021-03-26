@@ -7,6 +7,18 @@ namespace SalaryCalc.Models.Entities
     public class Product : EntityBase
     {
         /// <summary>
+        /// Наименование.
+        /// </summary>
+        [Display(Name = "Наименование")]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Изображение
+        /// </summary>
+        [Display(Name = "Изображение")]
+        public string ImagePath { get; set; }
+
+        /// <summary>
         /// Категория.
         /// </summary>
         [MaxLength(50)]

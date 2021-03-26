@@ -1,11 +1,11 @@
 ﻿@model Sale
 
 <div>
-    <h2>@Model.SaleDate</h2>
+    <h2>@Model.DateAdded</h2>
     <ul>
         @foreach (Product product in ViewBag.Products)
         {
-            <li>@product.Name</li>
+            <li>@product.Name — @product.Price</li>
         }
     </ul>
 

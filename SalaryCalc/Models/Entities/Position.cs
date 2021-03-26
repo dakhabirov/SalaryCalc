@@ -1,15 +1,11 @@
-﻿using System;
+﻿using SalaryCalc.Domain.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.Models.Entities
 {
-    public class Position
+    public class Position : EntityBase
     {
-        /// <summary>
-        /// Идентификатор.
-        /// </summary>
-        public Guid Id { get; set; }
-
         /// <summary>
         /// Наименование должности.
         /// </summary>

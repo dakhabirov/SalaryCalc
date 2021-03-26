@@ -1,14 +1,10 @@
-﻿using System;
+﻿using SalaryCalc.Domain.Entities;
+using System;
 
 namespace SalaryCalc.Models.Entities
 {
-    public class Salary
+    public class Salary : EntityBase
     {
-        /// <summary>
-        /// Идентификатор.
-        /// </summary>
-        public Guid Id { get; set; }
-
         /// <summary>
         /// Сумма заработной платы.
         /// </summary>

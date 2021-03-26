@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SalaryCalc.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -7,23 +8,12 @@ namespace SalaryCalc.Models.Entities
     /// <summary>
     /// Продажа.
     /// </summary>
-    public class Sale
+    public class Sale : EntityBase
     {
         /// <summary>
         /// Идентификатор.
         /// </summary>
-        public Guid Id { get; set; }
-
-        /// <summary>
-        /// Идентификатор.
-        /// </summary>
         public string UserId { get; set; }
-
-        /// <summary>
-        /// Дата продажи.
-        /// </summary>
-        [Display(Name = "Дата и время продажи")]
-        public DateTime SaleDate { get; set; }
 
         /// <summary>
         /// Пользователь.

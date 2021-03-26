@@ -28,7 +28,7 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
 
         public Sale GetSaleBySaleDate(DateTime saleDate)
         {
-            return context.Sales.FirstOrDefault(s => s.SaleDate == saleDate);
+            return context.Sales.FirstOrDefault(s => s.DateAdded == saleDate);
         }
 
         public void SaveSale(Sale sale)

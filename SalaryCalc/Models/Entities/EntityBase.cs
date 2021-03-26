@@ -5,13 +5,13 @@ namespace SalaryCalc.Domain.Entities
 {
     public abstract class EntityBase
     {
+        protected EntityBase() => DateAdded = DateTime.UtcNow;
+
         [Required]
         public Guid Id { get; set; }
 
-        [Display(Name = "Наименование")]
-        public virtual string Name { get; set; }
-
-        [Display(Name = "Изображение")]
-        public virtual string ImagePath { get; set; }
+        [Display(Name = "Дата добавления")]
+        [DataType(DataType.Time)]
+        public DateTime DateAdded { get; set; }
     }
 }

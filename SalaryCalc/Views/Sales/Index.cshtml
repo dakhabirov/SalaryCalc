@@ -12,7 +12,7 @@
                 @foreach (Sale sale in Model)
                 {
                     <li>
-                        <a asp-controller="Sales" asp-action="Index" asp-route-id="@sale.Id">@sale.SaleDate</a>
+                        <a asp-controller="Sales" asp-action="Index" asp-route-id="@sale.Id">@sale.DateAdded</a>
                     </li>
                 }
             </ul>
