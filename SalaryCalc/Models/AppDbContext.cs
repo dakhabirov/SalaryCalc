@@ -73,6 +73,7 @@ namespace SalaryCalc.Models
                 UserName = "sa",
                 NormalizedUserName = "SA",
                 PasswordHash = new PasswordHasher<User>().HashPassword(null, "123qwe"),
+                Fullname = "Fullname"
             });
             builder.Entity<User>().HasData(new User
             {

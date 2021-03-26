@@ -27,6 +27,13 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         Sale GetSaleBySaleDate(DateTime saleDate);
 
         /// <summary>
+        /// Получить пользователя, который реализовал продажу.
+        /// </summary>
+        /// <param name="sale">Продажа.</param>
+        /// <returns>Пользователь.</returns>
+        User GetSaleUser(Sale sale);
+
+        /// <summary>
         /// Сохранить изменения.
         /// </summary>
         /// <param name="sale">Объект класса Sale.</param>

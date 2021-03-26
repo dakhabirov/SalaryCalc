@@ -11,9 +11,12 @@
             <ul>
                 @foreach (Sale sale in Model)
                 {
-                    <li>
-                        <a asp-controller="Sales" asp-action="Index" asp-route-id="@sale.Id">@sale.DateAdded</a>
-                    </li>
+                    @foreach (User user in ViewBag.Users)
+                    {
+                        <li>
+                            <a asp-controller="Sales" asp-action="Index" asp-route-id="@sale.Id">@sale.DateAdded — @user.Fullname</a>
+                        </li>
+                    }
                 }
             </ul>
         }

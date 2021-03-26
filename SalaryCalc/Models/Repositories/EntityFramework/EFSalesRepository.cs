@@ -31,6 +31,11 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             return context.Sales.FirstOrDefault(s => s.DateAdded == saleDate);
         }
 
+        public User GetSaleUser(Sale sale)
+        {
+            return context.Users.Where(u => u.Id == sale.UserId).FirstOrDefault();
+        }
+
         public void SaveSale(Sale sale)
         {
             context.Entry(sale).State = sale.Id == default ? EntityState.Added : EntityState.Modified;

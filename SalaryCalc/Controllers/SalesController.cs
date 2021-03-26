@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SalaryCalc.Controllers
@@ -26,16 +27,25 @@ namespace SalaryCalc.Controllers
 
         public IActionResult Index(Guid id)
         {
-            if (id != default)
+            if (id != default)  // если в запросе был указан id товара
             {
                 var products = context.Products.Include(s => s.SaleProducts)
                                         .ThenInclude(sp => sp.Product)
-                                        .ToList();
-                ViewBag.Products = products;   // список проданных товаров
-                return View("Show", dataManager.Sales.GetSaleById(id));
+                                        .ToList();  // ищем товары в продаже
+                ViewBag.Products = products;    // передаем эти товары в представление через ViewBag
+                return View("Show", dataManager.Sales.GetSaleById(id)); // открываем представление Show и передаем туда выбранную продажу
             }
 
-            return View(dataManager.Sales.GetSales());
+            var sales = dataManager.Sales.GetSales();   // извлекаем все продажи
+            var users = new List<User>();   // сюда будем загружать продавцов
+   
+            foreach (Sale sale in sales)    // загружаем продавцов в список
+            {
+                users.Add(dataManager.Sales.GetSaleUser(sale));
+            }
+
+            ViewBag.Users = users;  // передаем список продацов через ViewBag
+            return View(sales); // передаем список продаж
         }
 
         public IActionResult Edit(Guid id)
