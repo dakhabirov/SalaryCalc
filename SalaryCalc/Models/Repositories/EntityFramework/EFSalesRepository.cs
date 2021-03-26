@@ -18,22 +18,22 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
 
         public IQueryable<Sale> GetSales()
         {
+            context.Users.ToList();  // список продавцов
             return context.Sales;
         }
 
         public Sale GetSaleById(Guid Id)
         {
+            context.Products.Include(s => s.SaleProducts)
+                                        .ThenInclude(sp => sp.Product)
+                                        .ToList();  // список товаров в продаже
+
             return context.Sales.FirstOrDefault(s => s.Id == Id);
         }
 
         public Sale GetSaleBySaleDate(DateTime saleDate)
         {
             return context.Sales.FirstOrDefault(s => s.DateAdded == saleDate);
-        }
-
-        public User GetSaleUser(Sale sale)
-        {
-            return context.Users.Where(u => u.Id == sale.UserId).FirstOrDefault();
         }
 
         public void SaveSale(Sale sale)

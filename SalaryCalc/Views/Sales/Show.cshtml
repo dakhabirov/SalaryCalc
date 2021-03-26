@@ -3,9 +3,9 @@
 <div>
     <h2>@Model.DateAdded</h2>
     <ul>
-        @foreach (Product product in ViewBag.Products)
+        @foreach (SaleProduct saleProduct in Model.SaleProducts)
         {
-            <li>@product.Name — @product.Price</li>
+            <li>@saleProduct.Product.Name</li>
         }
     </ul>
 

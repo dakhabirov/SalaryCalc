@@ -18,7 +18,7 @@ namespace SalaryCalc.Controllers
         private readonly DataManager dataManager;
         private readonly UserManager<User> userManager;
 
-        public SalesController(DataManager dataManager, AppDbContext context, UserManager<User> userManager)
+        public SalesController(AppDbContext context, DataManager dataManager, UserManager<User> userManager)
         {
             this.context = context;
             this.dataManager = dataManager;
@@ -27,25 +27,12 @@ namespace SalaryCalc.Controllers
 
         public IActionResult Index(Guid id)
         {
-            if (id != default)  // если в запросе был указан id товара
+            if (id != default)  // если в запросе был указан id продажи
             {
-                var products = context.Products.Include(s => s.SaleProducts)
-                                        .ThenInclude(sp => sp.Product)
-                                        .ToList();  // ищем товары в продаже
-                ViewBag.Products = products;    // передаем эти товары в представление через ViewBag
                 return View("Show", dataManager.Sales.GetSaleById(id)); // открываем представление Show и передаем туда выбранную продажу
             }
 
-            var sales = dataManager.Sales.GetSales();   // извлекаем все продажи
-            var users = new List<User>();   // сюда будем загружать продавцов
-   
-            foreach (Sale sale in sales)    // загружаем продавцов в список
-            {
-                users.Add(dataManager.Sales.GetSaleUser(sale));
-            }
-
-            ViewBag.Users = users;  // передаем список продацов через ViewBag
-            return View(sales); // передаем список продаж
+            return View(dataManager.Sales.GetSales()); // передаем список продаж
         }
 
         public IActionResult Edit(Guid id)
