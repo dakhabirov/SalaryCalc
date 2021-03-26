@@ -4,10 +4,10 @@ namespace SalaryCalc.Models.Entities
 {
     public class SaleProduct
     {
-        /// <summary>
-        /// Идентификатор.
-        /// </summary>
-        public Guid Id { get; set; }
+        ///// <summary>
+        ///// Идентификатор.
+        ///// </summary>
+        //public Guid Id { get; set; }
 
         /// <summary>
         /// Идентификатор продажи.

@@ -19,6 +19,6 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <param name="saleId">Идентификатор продажи.</param>
         /// <param name="productId">Идентификатор товара.</param>
         /// <param name="amount">Количество товара.</param>
-        void SaveSaleProducts(Guid saleId, Guid productId, int amount);
+        void SaveSaleProducts(Sale sale, Guid productId, int amount);
     }
 }

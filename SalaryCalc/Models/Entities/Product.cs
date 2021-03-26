@@ -28,6 +28,11 @@ namespace SalaryCalc.Models.Entities
         /// <summary>
         /// Коллекция проданных товаров.
         /// </summary>
-        public virtual ICollection<SaleProduct> SaleProducts { get; set; }
+        public List<SaleProduct> SaleProducts { get; set; }
+
+        public Product()
+        {
+            SaleProducts = new List<SaleProduct>();
+        }
     }
 }

@@ -20,16 +20,11 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             return context.Sales.Where(s => s.Id == saleId).FirstOrDefault().SaleProducts;
         }
 
-        public void SaveSaleProducts(Guid saleId, Guid productId, int amount)
+        public void SaveSaleProducts(Sale sale, Guid productId, int amount)
         {
-            SaleProduct saleProduct = new SaleProduct
-            {
-                SaleId = saleId,
-                ProductId = productId,
-                Amount = amount
-            };
+            var product = context.Products.Where(p => p.Id == productId).FirstOrDefault();
 
-            context.SaleProducts.Add(saleProduct);
+            sale.SaleProducts.Add(new SaleProduct { Sale = sale, Product = product, Amount = amount });
             context.SaveChanges();
         }
     }

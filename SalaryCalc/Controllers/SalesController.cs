@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
@@ -24,6 +25,10 @@ namespace SalaryCalc.Controllers
         {
             if (id != default)
             {
+                var products = context.Products.Include(s => s.SaleProducts)
+                                        .ThenInclude(sp => sp.Product)
+                                        .ToList();
+                ViewBag.Products = products;   // список проданных товаров
                 return View("Show", dataManager.Sales.GetSaleById(id));
             }
 
@@ -46,7 +51,7 @@ namespace SalaryCalc.Controllers
                 dataManager.Sales.SaveSale(sale);
                 foreach (Guid productId in productIds)
                 {
-                    dataManager.SaleProducts.SaveSaleProducts(sale.Id, productId, 1);
+                    dataManager.SaleProducts.SaveSaleProducts(sale, productId, 1);
                 }
                 context.SaveChanges();
                 return RedirectToAction(nameof(SalesController.Index));

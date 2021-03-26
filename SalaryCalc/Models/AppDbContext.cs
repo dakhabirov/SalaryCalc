@@ -28,12 +28,28 @@ namespace SalaryCalc.Models
         // заполняем базу данных первичными данными
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            // устанавливаем связь многие-ко-многие через промежуточную таблицу
+            builder.Entity<SaleProduct>()
+            .HasKey(sp => new { sp.SaleId, sp.ProductId });
+
+            builder.Entity<SaleProduct>()
+                .HasOne(sp => sp.Sale)
+                .WithMany(sp => sp.SaleProducts)
+                .HasForeignKey(sp => sp.SaleId);
+
+            builder.Entity<SaleProduct>()
+                .HasOne(sp => sp.Product)
+                .WithMany(sp => sp.SaleProducts)
+                .HasForeignKey(sp => sp.ProductId);
+
+
+
+
             base.OnModelCreating(builder);
 
             // генерируем гуиды (уникальные идентификаторы)
             Guid adminRoleGuid = Guid.NewGuid();
             Guid managerRoleGuid = Guid.NewGuid();
-            Guid salaryGuid = Guid.NewGuid();
             Guid adminGuid = Guid.NewGuid();
             Guid managerGuid = Guid.NewGuid();
 
