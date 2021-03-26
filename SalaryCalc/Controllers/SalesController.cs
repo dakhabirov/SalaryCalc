@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,11 +15,13 @@ namespace SalaryCalc.Controllers
     {
         private readonly AppDbContext context;
         private readonly DataManager dataManager;
+        private readonly UserManager<User> userManager;
 
-        public SalesController(DataManager dataManager, AppDbContext context)
+        public SalesController(DataManager dataManager, AppDbContext context, UserManager<User> userManager)
         {
             this.context = context;
             this.dataManager = dataManager;
+            this.userManager = userManager;
         }
 
         public IActionResult Index(Guid id)
@@ -48,6 +51,8 @@ namespace SalaryCalc.Controllers
         {
             if (ModelState.IsValid)
             {
+                User currentUser = userManager.GetUserAsync(HttpContext.User).Result;
+                sale.User = currentUser;
                 dataManager.Sales.SaveSale(sale);
                 foreach (Guid productId in productIds)
                 {
