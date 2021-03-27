@@ -38,7 +38,7 @@ namespace SalaryCalc.Controllers
         public IActionResult Edit(Guid id)
         {
             var sale = id == default ? new Sale() : dataManager.Sales.GetSaleById(id);
-            MultiSelectList products = new MultiSelectList(dataManager.Products.GetProducts(), "Id", "Name");
+            MultiSelectList products = new MultiSelectList(context.Products, "Id", "Name");
             ViewBag.Products = products;
             return View(sale);
         }

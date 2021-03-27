@@ -11,7 +11,7 @@ namespace SalaryCalc.Models.Entities
         /// </summary>
         [MaxLength(50)]
         [Required(ErrorMessage = "Заполните название должности")]
-        [Display(Name = "Название должности")]
+        [Display(Name = "Должность")]
         public string Name { get; set; }
 
         [Display(Name = "Часовая ставка")]

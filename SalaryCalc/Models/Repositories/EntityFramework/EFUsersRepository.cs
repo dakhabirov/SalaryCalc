@@ -1,18 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SalaryCalc.Models.Entities;
 using SalaryCalc.Models.Repositories.Interfaces;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SalaryCalc.Models.Repositories.EntityFramework
 {
     public class EFUsersRepository : IUsersRepository
     {
         private readonly AppDbContext context;
+        private readonly UserManager<User> userManager;
 
-        public EFUsersRepository(AppDbContext context)
+        public EFUsersRepository(AppDbContext context, UserManager<User> userManager, SignInManager<User> signInManager)
         {
             this.context = context;
+            this.userManager = userManager;
         }
 
         public IQueryable<User> GetUsers()
@@ -41,19 +46,21 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             return context.Salaries.Where(s => s.UserId == userId & s.Date == date).FirstOrDefault();
         }
 
-        public void SaveUser(User user)
+        public void SaveUser(User model)
         {
-            var dbUser = context.Users.Where(u => u.Id == user.Id).FirstOrDefault();
-            if (dbUser != null)
+            User user = context.Users.FirstOrDefault(u => u.Id == model.Id);
+            if (user != null)
             {
-                context.Entry(dbUser).State = EntityState.Detached;
-                context.Entry(user).State = EntityState.Modified;
+                user.Fullname = model.Fullname;
+                user.Position = model.Position;
+                context.Users.Update(user);
+                context.SaveChanges();
             }
             else
-                context.Entry(user).State = EntityState.Added;
-
-            //context.Entry(user).State = user.Id == default ? EntityState.Added : EntityState.Modified;
-            context.SaveChanges();
+            {
+                context.Users.Add(user);
+                context.SaveChanges();
+            }
         }
 
         public void DeleteUser(string id)

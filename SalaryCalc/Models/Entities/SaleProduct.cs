@@ -1,7 +1,9 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.Models.Entities
 {
+    [Display(Name = "Проданные товары")]
     public class SaleProduct
     {
         /// <summary>

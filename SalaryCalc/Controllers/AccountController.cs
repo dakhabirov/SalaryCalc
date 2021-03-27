@@ -1,27 +1,58 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using SalaryCalc.ViewModels;
+using System.Threading.Tasks;
 
 namespace SalaryCalc.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> userManager;
+        private readonly SignInManager<User> signInManager;
 
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
         {
-            _userManager = userManager;
-            _signInManager = signInManager;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
 
         [Authorize]
         public IActionResult Index()
         {
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                User user = new User { UserName = model.UserName, Fullname = model.Fullname, Position = model.Position };
+                // добавляем пользователя
+                var result = await userManager.CreateAsync(user, model.Password);
+                if (result.Succeeded)
+                {
+                    // установка куки
+                    await signInManager.SignInAsync(user, false);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+            }
+            return View(model);
         }
 
         [AllowAnonymous]
@@ -37,13 +68,13 @@ namespace SalaryCalc.Controllers
         {
             if (ModelState.IsValid)    // проверяем введенные данные на валидность
             {
-                var user = await _userManager.FindByNameAsync(model.UserName);  // ищем пользователя по введенному логину
+                var user = await userManager.FindByNameAsync(model.UserName);  // ищем пользователя по введенному логину
 
                 // если пользователь найден
                 if (user != null)
                 {
                     // проверяем введенный пароль
-                    var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.IsRemember, false);
+                    var result = await signInManager.PasswordSignInAsync(user, model.Password, model.IsRemember, false);
                     if (result.Succeeded)
                     {
                         return Redirect(returnUrl ?? "/");
@@ -62,7 +93,7 @@ namespace SalaryCalc.Controllers
         /// </summary>
         public async System.Threading.Tasks.Task<IActionResult> LogOffAsync()
         {
-            await _signInManager.SignOutAsync();
+            await signInManager.SignOutAsync();
             return Redirect("/");
         }
 

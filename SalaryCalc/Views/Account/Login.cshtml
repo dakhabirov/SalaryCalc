@@ -19,8 +19,10 @@
             <div asp-validation-summary="ModelOnly"></div>
             <input asp-for="UserName" class="form-control" placeholder="Имя пользователя" autofocus="">
             <input asp-for="Password" type="password" class="form-control" placeholder="Пароль">
-            <input asp-for="IsRemember" />
+            <input asp-for="IsRemember" type="checkbox">
+            <label asp-for="IsRemember"></label>
             <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
+            <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
             <p class="mt-5 mb-3 text-muted">© 2021</p>
             <input hidden asp-for="ReturnUrl">
         </form>

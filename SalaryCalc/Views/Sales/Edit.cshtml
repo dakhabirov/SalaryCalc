@@ -6,10 +6,11 @@
         <form asp-controller="Sales" asp-action="Edit" method="post">
             <input type="hidden" asp-for="UserId" />
             <div>
-                <label asp-for="DateAdded"></label>
+                <label asp-for="DateAdded"></label><br />
                 <input type="datetime" asp-for="DateAdded" />
                 <span asp-validation-for="DateAdded"></span>
             </div>
+            <label>Проданные товары</label><br />
             @Html.ListBox("productIds", ViewBag.Products as MultiSelectList)
             <input type="submit" value="Сохранить" />
         </form>

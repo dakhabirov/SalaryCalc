@@ -1,6 +1,7 @@
 ﻿using SalaryCalc.Models.Entities;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SalaryCalc.Models.Repositories.Interfaces
 {
@@ -45,6 +46,7 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// Сохранить изменения.
         /// </summary>
         /// <param name="user">Объект класса User.</param>
+        /// <param name="user">Пароль.</param>
         void SaveUser(User user);
 
         /// <summary>
