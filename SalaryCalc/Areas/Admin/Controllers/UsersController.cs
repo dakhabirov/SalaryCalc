@@ -32,25 +32,17 @@ namespace SalaryCalc.Controllers
         public IActionResult Edit(string id)
         {
             var user = id == default ? new User() : dataManager.Users.GetUserById(id);
-            if (user.Position == null)
-            {
-                SelectList defaultPositions = new SelectList(context.Positions, "Id", "Name");
-                ViewBag.Positions = defaultPositions;
-            }
-            else
-            {
-                SelectList positions = new SelectList(context.Positions, "Id", "Name", user.Position.Id);
-                ViewBag.Positions = positions;
-            }
+            SelectList positions = new SelectList(context.Positions, "Id", "Name", user.Position.Id);
+            ViewBag.Positions = positions;
             return View(user);
         }
 
         [HttpPost]
-        public IActionResult Edit(User user, Guid PositionId)
+        public IActionResult Edit(User user)
         {
             if (ModelState.IsValid)
             {
-                var position = context.Positions.FirstOrDefault(p => p.Id == PositionId);
+                var position = context.Positions.FirstOrDefault(p => p.Id == user.PositionId);
                 user.Position = position;
                 dataManager.Users.SaveUser(user);
                 return RedirectToAction(nameof(HomeController.Index));

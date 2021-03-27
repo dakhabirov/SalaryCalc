@@ -1,19 +1,26 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using SalaryCalc.ViewModels;
+using System;
 using System.Threading.Tasks;
 
 namespace SalaryCalc.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly AppDbContext context;
+        private readonly DataManager dataManager;
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
 
-        public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
+        public AccountController(AppDbContext context, DataManager dataManager, UserManager<User> userManager, SignInManager<User> signInManager)
         {
+            this.context = context;
+            this.dataManager = dataManager;
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
@@ -24,9 +31,10 @@ namespace SalaryCalc.Controllers
             return View();
         }
 
-        [HttpGet]
         public IActionResult Register()
         {
+            SelectList positions = new SelectList(context.Positions, "Id", "Name"); // должности
+            ViewBag.Positions = positions;
             return View();
         }
 
@@ -35,7 +43,7 @@ namespace SalaryCalc.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { UserName = model.UserName, Fullname = model.Fullname, Position = model.Position };
+                User user = new User { UserName = model.UserName, Fullname = model.Fullname, PositionId = model.PositionId };
                 // добавляем пользователя
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)

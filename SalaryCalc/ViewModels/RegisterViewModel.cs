@@ -1,4 +1,5 @@
 ﻿using SalaryCalc.Models.Entities;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.ViewModels

@@ -52,6 +52,16 @@ namespace SalaryCalc.Models
             Guid managerRoleGuid = Guid.NewGuid();
             Guid adminGuid = Guid.NewGuid();
             Guid managerGuid = Guid.NewGuid();
+            Guid positionGuid = Guid.NewGuid();
+
+            // создаем должность (для теста)
+            Position position = new Position
+            {
+                Id = positionGuid,
+                Name = "Должность",
+                HourlyRate = 100
+            };
+            builder.Entity<Position>().HasData(position);
 
             // создаем роли
             builder.Entity<IdentityRole>().HasData(new IdentityRole
@@ -73,7 +83,8 @@ namespace SalaryCalc.Models
                 UserName = "sa",
                 NormalizedUserName = "SA",
                 PasswordHash = new PasswordHasher<User>().HashPassword(null, "123qwe"),
-                Fullname = "Fullname"
+                Fullname = "Fullname",
+                PositionId = positionGuid
             });
             builder.Entity<User>().HasData(new User
             {
@@ -81,6 +92,8 @@ namespace SalaryCalc.Models
                 UserName = "manager",
                 NormalizedUserName = "MANAGER",
                 PasswordHash = new PasswordHasher<User>().HashPassword(null, "123qwe"),
+                Fullname = "Fullname",
+                PositionId = positionGuid
             });
 
             // назначаем созданным пользователям роль

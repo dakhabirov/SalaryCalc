@@ -15,6 +15,11 @@ namespace SalaryCalc.Models.Entities
         public string Fullname { get; set; }
 
         /// <summary>
+        /// Идентификатор должности.
+        /// </summary>
+        public Guid PositionId { get; set; }
+
+        /// <summary>
         /// Должность. 
         /// </summary>
         [Display(Name = "Должность")]

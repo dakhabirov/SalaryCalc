@@ -13,7 +13,11 @@
         <input asp-for="Fullname" />
         <span asp-validation-for="Fullname"></span>
     </div>
-    
+    <div>
+        <label asp-for="Position.Name"></label><br />
+        @Html.DropDownListFor(model => model.PositionId, ViewBag.Positions as SelectList)
+        <span asp-validation-for="Position"></span>
+    </div>
     <div>
         <label asp-for="Password"></label><br />
         <input asp-for="Password" />
