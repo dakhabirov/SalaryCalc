@@ -41,7 +41,12 @@ namespace SalaryCalc.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Positions = new SelectList(context.Positions, "Id", "Name");
+                return View(model);
+            }
+            else
             {
                 User user = new User { UserName = model.UserName, Fullname = model.Fullname, PositionId = model.PositionId };
                 // добавляем пользователя
@@ -59,8 +64,8 @@ namespace SalaryCalc.Controllers
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
                 }
+                return View(model);
             }
-            return View(model);
         }
 
         [AllowAnonymous]

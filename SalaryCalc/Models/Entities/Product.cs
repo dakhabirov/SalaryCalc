@@ -9,6 +9,7 @@ namespace SalaryCalc.Models.Entities
         /// <summary>
         /// Наименование.
         /// </summary>
+        [Required(ErrorMessage = "Поле должно быть установлено")]
         [Display(Name = "Наименование")]
         public string Name { get; set; }
 
@@ -21,6 +22,7 @@ namespace SalaryCalc.Models.Entities
         /// <summary>
         /// Категория.
         /// </summary>
+        [Required(ErrorMessage = "Поле должно быть установлено")]
         [MaxLength(50)]
         [Display(Name = "Категория")]
         public string Category { get; set; }
@@ -28,12 +30,14 @@ namespace SalaryCalc.Models.Entities
         /// <summary>
         /// Цена.
         /// </summary>
+        [Required(ErrorMessage = "Поле должно быть установлено")]
         [Display(Name="Цена")]
         public float Price { get; set; }
 
         /// <summary>
         /// Определяет, является ли товар избранным.
         /// </summary>
+        [Required(ErrorMessage = "Поле должно быть установлено")]
         [Display(Name = "Избранный товар")]
         public bool IsFavorite { get; set; }
 

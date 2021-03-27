@@ -14,9 +14,9 @@
         <span asp-validation-for="Fullname"></span>
     </div>
     <div>
-        <label asp-for="Position.Name"></label><br />
-        @Html.DropDownListFor(model => model.PositionId, ViewBag.Positions as SelectList)
-        <span asp-validation-for="Position"></span>
+        @Html.LabelFor(m => m.Position.Name)<br />
+        @Html.DropDownListFor(m => m.PositionId, ViewBag.Positions as SelectList)
+        @Html.ValidationMessageFor(m => m.Position)
     </div>
     <div>
         <label asp-for="Password"></label><br />
