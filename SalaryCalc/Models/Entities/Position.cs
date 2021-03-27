@@ -1,5 +1,6 @@
 ﻿using SalaryCalc.Domain.Entities;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.Models.Entities
@@ -16,5 +17,10 @@ namespace SalaryCalc.Models.Entities
 
         [Display(Name = "Часовая ставка")]
         public float HourlyRate { get; set; }
+
+        /// <summary>
+        /// Список пользователей, которым принадлежит данная должность.
+        /// </summary>
+        public List<User> Users { get; set; } = new List<User>();
     }
 }

@@ -1,7 +1,6 @@
 ﻿using SalaryCalc.Models.Entities;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SalaryCalc.Models.Repositories.Interfaces
 {

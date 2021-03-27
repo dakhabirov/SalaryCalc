@@ -21,7 +21,7 @@ namespace SalaryCalc.Models.Entities
         public virtual User User { get; set; }
 
         /// <summary>
-        /// Коллекция проданных товаров.
+        /// Список проданных товаров.
         /// </summary>
         public List<SaleProduct> SaleProducts { get; set; }
 

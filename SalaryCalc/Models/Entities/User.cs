@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.Models.Entities
 {
-    public class User: IdentityUser
+    public class User : IdentityUser
     {
         /// <summary>
         /// Полное имя.
@@ -17,7 +18,7 @@ namespace SalaryCalc.Models.Entities
         /// Должность. 
         /// </summary>
         [Display(Name = "Должность")]
-        public virtual Position Position { get; set; }
+        public Position Position { get; set; }
 
         /// <summary>
         /// Коллекция заработных плат.

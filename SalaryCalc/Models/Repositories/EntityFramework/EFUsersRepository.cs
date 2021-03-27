@@ -1,23 +1,18 @@
-﻿using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SalaryCalc.Models.Entities;
 using SalaryCalc.Models.Repositories.Interfaces;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace SalaryCalc.Models.Repositories.EntityFramework
 {
     public class EFUsersRepository : IUsersRepository
     {
         private readonly AppDbContext context;
-        private readonly UserManager<User> userManager;
 
-        public EFUsersRepository(AppDbContext context, UserManager<User> userManager, SignInManager<User> signInManager)
+        public EFUsersRepository(AppDbContext context)
         {
             this.context = context;
-            this.userManager = userManager;
         }
 
         public IQueryable<User> GetUsers()
@@ -27,6 +22,9 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
 
         public User GetUserById(string Id)
         {
+            context.Users.Where(u => u.Id == Id)
+                .Include(u => u.Position)
+                .FirstOrDefault();    // подгружаем должность из базы данных в контекст
             return context.Users.FirstOrDefault(u => u.Id == Id);
         }
 
@@ -51,14 +49,9 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             User user = context.Users.FirstOrDefault(u => u.Id == model.Id);
             if (user != null)
             {
+                user.UserName = model.UserName;
                 user.Fullname = model.Fullname;
                 user.Position = model.Position;
-                context.Users.Update(user);
-                context.SaveChanges();
-            }
-            else
-            {
-                context.Users.Add(user);
                 context.SaveChanges();
             }
         }

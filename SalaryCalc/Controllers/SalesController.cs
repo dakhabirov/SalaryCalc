@@ -2,12 +2,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace SalaryCalc.Controllers
 {
