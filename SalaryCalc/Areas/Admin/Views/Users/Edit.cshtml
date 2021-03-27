@@ -19,7 +19,7 @@
             </div>
             <div>
                 <label asp-for="Position.Name"></label><br />
-                @Html.DropDownList("positionId", ViewBag.Positions as SelectList, "")
+                @Html.DropDownList("positionId", ViewBag.Positions as SelectList)
                 <span asp-validation-for="Position"></span>
             </div>
             <input type="submit" value="Сохранить" />

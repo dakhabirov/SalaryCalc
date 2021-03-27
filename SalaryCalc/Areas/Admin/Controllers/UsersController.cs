@@ -32,8 +32,16 @@ namespace SalaryCalc.Controllers
         public IActionResult Edit(string id)
         {
             var user = id == default ? new User() : dataManager.Users.GetUserById(id);
-            SelectList positions = new SelectList(context.Positions, "Id", "Name"); //, user.Position.Id);
-            ViewBag.Positions = positions;
+            if (user.Position == null)
+            {
+                SelectList defaultPositions = new SelectList(context.Positions, "Id", "Name");
+                ViewBag.Positions = defaultPositions;
+            }
+            else
+            {
+                SelectList positions = new SelectList(context.Positions, "Id", "Name", user.Position.Id);
+                ViewBag.Positions = positions;
+            }
             return View(user);
         }
 
