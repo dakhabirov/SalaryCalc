@@ -6,78 +6,95 @@ using System;
 
 namespace SalaryCalc.Models
 {
-    public class AppDbContext : IdentityDbContext<IdentityUser>
+    public class AppDbContext : IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
-            Database.EnsureCreated();   // создаем базу данных при первом обращении
+            // Создаем БД при первом обращении.
+            Database.EnsureCreated();
         }
 
+        /// <summary>
+        /// Пользователи.
+        /// </summary>
         public DbSet<User> Users { get; set; }
 
+        /// <summary>
+        /// Должности.
+        /// </summary>
         public DbSet<Position> Positions { get; set; }
 
+        /// <summary>
+        /// Заработные платы.
+        /// </summary>
         public DbSet<Salary> Salaries { get; set; }
 
+        /// <summary>
+        /// Продажи.
+        /// </summary>
         public DbSet<Sale> Sales { get; set; }
 
+        /// <summary>
+        /// Товары.
+        /// </summary>
         public DbSet<Product> Products { get; set; }
 
+        /// <summary>
+        /// Категории.
+        /// </summary>
+        public DbSet<Category> Categories { get; set; }
+
+        /// <summary>
+        /// Проданные товары.
+        /// </summary>
         public DbSet<SaleProduct> SaleProducts { get; set; }
 
-        // заполняем базу данных первичными данными
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // устанавливаем связь многие-ко-многие через промежуточную таблицу
-            builder.Entity<SaleProduct>()
+            base.OnModelCreating(modelBuilder);
+
+            // Устанавливаем связь многие-ко-многие через промежуточную таблицу.
+            modelBuilder.Entity<SaleProduct>()
             .HasKey(sp => new { sp.SaleId, sp.ProductId });
 
-            builder.Entity<SaleProduct>()
+            modelBuilder.Entity<SaleProduct>()
                 .HasOne(sp => sp.Sale)
                 .WithMany(sp => sp.SaleProducts)
                 .HasForeignKey(sp => sp.SaleId);
 
-            builder.Entity<SaleProduct>()
+            modelBuilder.Entity<SaleProduct>()
                 .HasOne(sp => sp.Product)
                 .WithMany(sp => sp.SaleProducts)
                 .HasForeignKey(sp => sp.ProductId);
 
 
+            //
+            // Инициализация БД начальными данными.
+            //
 
-
-            base.OnModelCreating(builder);
-
-            // генерируем гуиды (уникальные идентификаторы)
+            // Генерируем уникальные идентификаторы.
             Guid adminRoleGuid = Guid.NewGuid();
-            Guid managerRoleGuid = Guid.NewGuid();
             Guid adminGuid = Guid.NewGuid();
-            Guid managerGuid = Guid.NewGuid();
             Guid positionGuid = Guid.NewGuid();
+            Guid categoryGuid = Guid.NewGuid();
 
-            // создаем должность (для теста)
-            Position position = new Position
+            // Создаем должности.
+            modelBuilder.Entity<Position>().HasData(new Position
             {
                 Id = positionGuid,
                 Name = "Должность",
                 HourlyRate = 100
-            };
-            builder.Entity<Position>().HasData(position);
+            });
 
-            // создаем роли
-            builder.Entity<IdentityRole>().HasData(new IdentityRole
+            // Cоздаем роли.
+            modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole
             {
                 Id = adminRoleGuid.ToString(),
                 Name = "Administrator",
             });
-            builder.Entity<IdentityRole>().HasData(new IdentityRole
-            {
-                Id = managerRoleGuid.ToString(),
-                Name = "Manager",
-            });
 
-
-            // создаем пользователей
-            builder.Entity<User>().HasData(new User
+            // Создаем пользователей.
+            modelBuilder.Entity<User>().HasData(new User
             {
                 Id = adminGuid.ToString(),
                 UserName = "sa",
@@ -86,26 +103,27 @@ namespace SalaryCalc.Models
                 Fullname = "Fullname",
                 PositionId = positionGuid
             });
-            builder.Entity<User>().HasData(new User
-            {
-                Id = managerGuid.ToString(),
-                UserName = "manager",
-                NormalizedUserName = "MANAGER",
-                PasswordHash = new PasswordHasher<User>().HashPassword(null, "123qwe"),
-                Fullname = "Fullname",
-                PositionId = positionGuid
-            });
 
-            // назначаем созданным пользователям роль
-            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+            // Назначаем пользователям роль.
+            modelBuilder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
             {
                 RoleId = adminRoleGuid.ToString(),
                 UserId = adminGuid.ToString()
             });
-            builder.Entity<IdentityUserRole<string>>().HasData(new IdentityUserRole<string>
+
+            // Создаем категории.
+            modelBuilder.Entity<Category>().HasData(new Category
             {
-                RoleId = managerRoleGuid.ToString(),
-                UserId = managerGuid.ToString()
+                Id = Guid.NewGuid(),
+                Name = "Товар",
+                IsFavorite = true
+            });
+
+            modelBuilder.Entity<Category>().HasData(new Category
+            {
+                Id = Guid.NewGuid(),
+                Name = "Услуга",
+                IsFavorite = true
             });
         }
     }

@@ -23,8 +23,8 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
         public User GetUserById(string Id)
         {
             context.Users.Where(u => u.Id == Id)
-                .Include(u => u.Position)
-                .FirstOrDefault();    // подгружаем должность из базы данных в контекст
+                            .Include(p => p.Position)
+                                .FirstOrDefault();    // подгружаем должность из базы данных в контекст
             return context.Users.FirstOrDefault(u => u.Id == Id);
         }
 

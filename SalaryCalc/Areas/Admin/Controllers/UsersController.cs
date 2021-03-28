@@ -32,7 +32,7 @@ namespace SalaryCalc.Controllers
         public IActionResult Edit(string id)
         {
             var user = id == default ? new User() : dataManager.Users.GetUserById(id);
-            SelectList positions = new SelectList(context.Positions, "Id", "Name", user.Position.Id);
+            SelectList positions = new SelectList(context.Positions, "Id", "Name");
             ViewBag.Positions = positions;
             return View(user);
         }

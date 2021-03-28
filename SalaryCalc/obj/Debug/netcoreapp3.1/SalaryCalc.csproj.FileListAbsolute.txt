@@ -190,7 +190,6 @@ C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Sa
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Sales\Index.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Positions\Index.cshtml.g.cs
-C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ProfilePartial.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Salaries\Show.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Products\Edit.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs

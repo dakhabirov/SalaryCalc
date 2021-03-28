@@ -1,5 +1,4 @@
 ﻿using SalaryCalc.Domain.Entities;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -10,7 +9,7 @@ namespace SalaryCalc.Models.Entities
         /// <summary>
         /// Наименование должности.
         /// </summary>
-        [MaxLength(50)]
+        [MaxLength(50, ErrorMessage = "Поле не должно превышать 50 символов")]
         [Required(ErrorMessage = "Поле должно быть установлено")]
         [Display(Name = "Должность")]
         public string Name { get; set; }

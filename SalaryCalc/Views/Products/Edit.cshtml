@@ -1,9 +1,6 @@
 ﻿@model Product
-@{ string strTitle = "Редактировать запись";
-    ViewBag.Title = strTitle; }
 
 <div>
-    <h2>@strTitle</h2>
     <div>
         <form asp-controller="Products" asp-action="Edit" method="post" enctype="multipart/form-data">
             <div>
@@ -12,19 +9,14 @@
                 <span asp-validation-for="Name"></span>
             </div>
             <div>
-                <label asp-for="Category"></label><br />
-                <input asp-for="Category" />
+                <label asp-for="Category.Name"></label><br />
+                @Html.DropDownListFor(model => model.CategoryId, ViewBag.Categories as SelectList)
                 <span asp-validation-for="Category"></span>
             </div>
             <div>
                 <label asp-for="Price"></label><br />
                 <input asp-for="Price" />
                 <span asp-validation-for="Price"></span>
-            </div>
-            <div>
-                <label asp-for="IsFavorite"> </label>
-                <input asp-for="IsFavorite" />
-                <span asp-validation-for="IsFavorite"></span>
             </div>
             <div>
                 <label asp-for="ImagePath"></label><br />

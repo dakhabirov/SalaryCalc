@@ -1,4 +1,6 @@
 ﻿using SalaryCalc.Domain.Entities;
+using SalaryCalc.Service;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
@@ -20,14 +22,6 @@ namespace SalaryCalc.Models.Entities
         public string ImagePath { get; set; }
 
         /// <summary>
-        /// Категория.
-        /// </summary>
-        [Required(ErrorMessage = "Поле должно быть установлено")]
-        [MaxLength(50)]
-        [Display(Name = "Категория")]
-        public string Category { get; set; }
-
-        /// <summary>
         /// Цена.
         /// </summary>
         [Required(ErrorMessage = "Поле должно быть установлено")]
@@ -35,20 +29,18 @@ namespace SalaryCalc.Models.Entities
         public float Price { get; set; }
 
         /// <summary>
-        /// Определяет, является ли товар избранным.
+        /// Идентификатор категории.
         /// </summary>
-        [Required(ErrorMessage = "Поле должно быть установлено")]
-        [Display(Name = "Избранный товар")]
-        public bool IsFavorite { get; set; }
+        public Guid CategoryId { get; set; }
 
         /// <summary>
-        /// Коллекция проданных товаров.
+        /// Категория.
         /// </summary>
-        public List<SaleProduct> SaleProducts { get; set; }
+        public Category Category { get; set; }
 
-        public Product()
-        {
-            SaleProducts = new List<SaleProduct>();
-        }
+        /// <summary>
+        /// Список проданных товаров.
+        /// </summary>
+        public List<SaleProduct> SaleProducts { get; set; } = new List<SaleProduct>();
     }
 }

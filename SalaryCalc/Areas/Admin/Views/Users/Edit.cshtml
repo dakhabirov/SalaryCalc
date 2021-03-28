@@ -1,9 +1,6 @@
 ﻿@model User
-@{ string strTitle = "Редактировать запись";
-                ViewBag.Title = strTitle; }
 
 <div>
-    <h2>@strTitle</h2>
     <div>
         <form asp-area="admin" asp-controller="Users" asp-action="Edit" method="post">
 

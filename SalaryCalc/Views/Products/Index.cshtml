@@ -14,9 +14,10 @@
                 <li>
                     <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id">
                         <img src="~/img/products/@product.ImagePath" alt="" />
+                        <h4>@($"{product.Name}")</h4>
                     </a>
-                    <h4>@($"{product.Name}")</h4>
-                    <p>@product.Price</p>
+                    <label asp-for="@product.Price"></label>
+                    <output>: @product.Price</output>
                 </li>
                 }
             </ul>

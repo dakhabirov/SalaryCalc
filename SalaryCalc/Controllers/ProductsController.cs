@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
@@ -11,11 +12,13 @@ namespace SalaryCalc.Controllers
 {
     public class ProductsController : Controller
     {
+        private readonly AppDbContext context;
         private readonly DataManager dataManager;
         private readonly IWebHostEnvironment hostEnvironment;
 
-        public ProductsController(DataManager dataManager, IWebHostEnvironment hostEnvironment)
+        public ProductsController(AppDbContext context, DataManager dataManager, IWebHostEnvironment hostEnvironment)
         {
+            this.context = context;
             this.dataManager = dataManager;
             this.hostEnvironment = hostEnvironment;
         }
@@ -30,10 +33,11 @@ namespace SalaryCalc.Controllers
             return View(dataManager.Products.GetProducts());
         }
 
-        [Authorize(Policy = "Administrator")]
         public IActionResult Edit(Guid id)
         {
             var product = id == default ? new Product() : dataManager.Products.GetProductById(id);
+            SelectList categories = new SelectList(context.Categories, "Id", "Name");
+            ViewBag.Categories = categories;
             return View(product);
         }
 
