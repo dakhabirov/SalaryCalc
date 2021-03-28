@@ -5,8 +5,8 @@
     <h4>@Model.HourlyRate</h4>
 
     <a asp-area="admin" asp-controller="Positions" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
-    <form style="display: inline-block" id="form-@Model.Id" asp-area="admin" asp-controller="Positions" asp-action="Delete" method="post">
+    <form style="display: inline-block" asp-area="admin" asp-controller="Positions" asp-action="Delete" method="post">
         <input type="hidden" name="id" value="@Model.Id" />
-        <a href="#" onclick="document.getElementById('form-@Model.Id').submit();">Удалить</a>
+        <button type="submit">Удалить</button>
     </form>
 </div>

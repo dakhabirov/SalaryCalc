@@ -7,6 +7,7 @@ using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace SalaryCalc.Controllers
 {
@@ -43,7 +44,7 @@ namespace SalaryCalc.Controllers
 
         [HttpPost]
         [Authorize(Policy = "Administrator")]
-        public IActionResult Edit(Product product, IFormFile imageFile)
+        public async Task<IActionResult> EditAsync(Product product, IFormFile imageFile)
         {
             if (ModelState.IsValid)
             {
@@ -51,7 +52,7 @@ namespace SalaryCalc.Controllers
                 {
                     product.ImagePath = imageFile.FileName;
                     using var stream = new FileStream(Path.Combine(hostEnvironment.WebRootPath, "img/products/", imageFile.FileName), FileMode.Create);
-                    imageFile.CopyTo(stream);
+                    await imageFile.CopyToAsync(stream);
                 }
 
                 dataManager.Products.SaveProduct(product);
