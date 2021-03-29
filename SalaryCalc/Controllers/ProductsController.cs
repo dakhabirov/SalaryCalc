@@ -30,7 +30,6 @@ namespace SalaryCalc.Controllers
             {
                 return View("Show", dataManager.Products.GetProductById(id));
             }
-
             return View(dataManager.Products.GetProducts());
         }
 

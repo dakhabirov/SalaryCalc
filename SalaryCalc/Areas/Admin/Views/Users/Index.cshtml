@@ -9,7 +9,7 @@
                 @foreach (User user in Model)
                 {
                 <div>
-                    <a asp-area="" asp-controller="Users" asp-action="Index" asp-route-id="@user.Id">
+                    <a asp-area="admin" asp-controller="Users" asp-action="Index" asp-route-id="@user.Id">
                         @($"{user.UserName}")
                     </a><br />
 

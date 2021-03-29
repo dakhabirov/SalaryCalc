@@ -2,8 +2,29 @@
     background: #fcfcfc;
 }
 
-.img-block {
+a {
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
+}
+
+.button-delete {
+    border: 2px solid #e34761; /* Параметры рамки */
+    background: #f3dbdf; /* Цвет фона */
+    padding: 5px 20px; /* Поля вокруг текста */
+}
+
+.img-product {
     display: block;
     max-width: 100%;
-    margin: 0 auto;
+}
+
+.passe-partout {
+    padding: 5px; /* Ширина паспарту */
+    background: #00BFFF; /* Цвет фона  паспарту */
+    border: 0px solid #666; /* Параметры рамки */
+    margin-right: 10px; /* Отступ справа */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+a .passe-partout:hover {
+    background: #F5F5DC; /* Цвет фона паспарту при наведении на ссылку курсора мыши */
 }

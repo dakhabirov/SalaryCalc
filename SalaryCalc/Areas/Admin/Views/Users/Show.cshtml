@@ -1,0 +1,21 @@
+﻿@model User
+
+<div>
+    <h2>@Model.Fullname</h2>
+    <ul>
+        <li>
+            <label asp-for="@Model.UserName"></label>
+            <output>: @Model.UserName</output>
+        </li>
+        <li>
+            <label asp-for="@Model.Position.Name"></label>
+            <output>: @Model.Position.Name</output>
+        </li>
+    </ul>
+
+    <a asp-controller="Users" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <form style="display: inline-block" asp-controller="Users" asp-action="Delete" method="post">
+        <input type="hidden" name="id" value="@Model.Id" />
+        <button class="button-delete" type="submit">Удалить</button>
+    </form>
+</div>

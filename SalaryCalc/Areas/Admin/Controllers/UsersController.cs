@@ -24,8 +24,12 @@ namespace SalaryCalc.Controllers
             this.userManager = userManager;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string id)
         {
+            if (id != default)
+            {
+                return View("Show", dataManager.Users.GetUserById(id));
+            }
             return View(dataManager.Users.GetUsers());
         }
 
