@@ -7,7 +7,7 @@
         {
             <li>
                 <a asp-controller="Products" asp-action="Index" asp-route-id="@saleProduct.Product.Id">
-                    <img src="~/img/products/@saleProduct.Product.ImagePath" alt="" />
+                    <img  alt="Изображение товара @saleProduct.Product.Name" class="img-product, passe-partout" src="~/img/products/@saleProduct.Product.ImagePath" />
                     <h4>@($"{saleProduct.Product.Name}")</h4>
                 </a>
             </li>

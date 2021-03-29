@@ -19,7 +19,7 @@
                 @Html.DropDownListFor(model => model.PositionId, ViewBag.Positions as SelectList)
                 <span asp-validation-for="Position"></span>
             </div>
-            <button class="button-save" type="submit">Сохранить</button>
+            <input type="submit" value="Сохранить" />
             @ViewBag.PositionName
         </form>
     </div>

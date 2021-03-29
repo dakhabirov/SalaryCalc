@@ -12,7 +12,7 @@
                 {
                 <div style="margin-bottom: 25px; margin-right: 25px">
                     <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id">
-                        <img alt="Изображение товара @product.Name" class="img-product, passe-partout" src="~/img/products/@product.ImagePath" alt="" />
+                        <img alt="Изображение товара @product.Name" class="img-product, passe-partout" src="~/img/products/@product.ImagePath" />
                         <h4>@($"{product.Name}")</h4>
                     </a>
                     <label asp-for="@product.Price"></label>
