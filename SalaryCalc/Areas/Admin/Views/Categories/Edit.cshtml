@@ -1,0 +1,19 @@
+﻿@model Category
+
+<div>
+    <div>
+        <form asp-controller="Categories" asp-action="Edit" method="post">
+            <div>
+                <label asp-for="Name"></label><br />
+                <input asp-for="Name" />
+                <span asp-validation-for="Name"></span>
+            </div>
+            <div>
+                <label asp-for="IsFavorite"></label><br />
+                <input asp-for="IsFavorite" />
+                <span asp-validation-for="IsFavorite"></span>
+            </div>
+            <input type="submit" value="Сохранить" />
+        </form>
+    </div>
+</div>

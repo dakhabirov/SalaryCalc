@@ -1,0 +1,21 @@
+﻿@model IQueryable<Category>
+
+<div>
+    <h1>Категории товаров</h1>
+    <div class="nav-link active">
+        <a asp-controller="Categories" asp-action="Edit" asp-route-id="">Добавить</a>
+    </div>
+    <div>
+        @if (Model.Any())
+        {
+            <ul>
+                @foreach (Category category in Model)
+                {
+                    <li>
+                        <a asp-controller="Categories" asp-action="Index" asp-route-id="@category.Id">@category.Name</a>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+</div>

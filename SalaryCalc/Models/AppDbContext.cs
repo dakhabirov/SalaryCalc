@@ -111,20 +111,20 @@ namespace SalaryCalc.Models
                 UserId = adminGuid.ToString()
             });
 
-            // Создаем категории.
-            modelBuilder.Entity<Category>().HasData(new Category
-            {
-                Id = Guid.NewGuid(),
-                Name = "Товар",
-                IsFavorite = true
-            });
+            //// Создаем категории.
+            //modelBuilder.Entity<Category>().HasData(new Category
+            //{
+            //    Id = Guid.NewGuid(),
+            //    Name = "Товар",
+            //    IsFavorite = true
+            //});
 
-            modelBuilder.Entity<Category>().HasData(new Category
-            {
-                Id = Guid.NewGuid(),
-                Name = "Услуга",
-                IsFavorite = true
-            });
+            //modelBuilder.Entity<Category>().HasData(new Category
+            //{
+            //    Id = Guid.NewGuid(),
+            //    Name = "Услуга",
+            //    IsFavorite = true
+            //});
         }
     }
 }

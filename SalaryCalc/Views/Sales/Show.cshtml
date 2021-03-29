@@ -5,7 +5,12 @@
     <ul>
         @foreach (SaleProduct saleProduct in Model.SaleProducts)
         {
-            <li>@saleProduct.Product.Name</li>
+            <li>
+                <a asp-controller="Products" asp-action="Index" asp-route-id="@saleProduct.Product.Id">
+                    <img src="~/img/products/@saleProduct.Product.ImagePath" alt="" />
+                    <h4>@($"{saleProduct.Product.Name}")</h4>
+                </a>
+            </li>
         }
     </ul>
 

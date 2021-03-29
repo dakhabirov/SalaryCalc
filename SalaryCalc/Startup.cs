@@ -32,6 +32,7 @@ namespace SalaryCalc
             services.AddTransient<IUsersRepository, EFUsersRepository>();   // связываем интерфейс с его реализацией
             services.AddTransient<IPositionsRepository, EFPositionsRepository>();
             services.AddTransient<IProductsRepository, EFProductsRepository>();
+            services.AddTransient<ICategoriesRepository, EFCategoriesRepository>();
             services.AddTransient<ISalesRepository, EFSalesRepository>();
             services.AddTransient<ISaleProductsRepository, EFSaleProductsRepository>();
             services.AddTransient<DataManager>();

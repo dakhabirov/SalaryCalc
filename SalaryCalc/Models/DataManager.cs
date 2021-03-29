@@ -10,15 +10,18 @@ namespace SalaryCalc.Models
 
         public IProductsRepository Products { get; set; }
 
+        public ICategoriesRepository Categories { get; set; }
+
         public ISalesRepository Sales { get; set; }
 
         public ISaleProductsRepository SaleProducts { get; set; }
 
-        public DataManager(IUsersRepository users, IPositionsRepository positions, IProductsRepository products, ISalesRepository sales, ISaleProductsRepository saleProducts)
+        public DataManager(IUsersRepository users, IPositionsRepository positions, IProductsRepository products, ICategoriesRepository categories, ISalesRepository sales, ISaleProductsRepository saleProducts)
         {
             Users = users;
             Positions = positions;
             Products = products;
+            Categories = categories;
             Sales = sales;
             SaleProducts = saleProducts;
         }
