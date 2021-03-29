@@ -1,7 +1,6 @@
 ﻿@model Sale
 
 <div>
-    <h2>Редактировать запись</h2>
     <div>
         <form asp-controller="Sales" asp-action="Edit" method="post">
             <input type="hidden" asp-for="UserId" />
@@ -12,7 +11,7 @@
             </div>
             <label>Проданные товары</label><br />
             @Html.ListBox("productIds", ViewBag.Products as MultiSelectList)
-            <input type="submit" value="Сохранить" />
+            <button class="button-save" type="submit">Сохранить</button>
         </form>
     </div>
 </div>

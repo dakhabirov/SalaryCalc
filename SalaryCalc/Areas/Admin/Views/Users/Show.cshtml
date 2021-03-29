@@ -16,6 +16,6 @@
     <a asp-controller="Users" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
     <form style="display: inline-block" asp-controller="Users" asp-action="Delete" method="post">
         <input type="hidden" name="id" value="@Model.Id" />
-        <button class="button-delete" type="submit">Удалить</button>
+        <input class="button-delete" type="submit" value="Удалить" />
     </form>
 </div>

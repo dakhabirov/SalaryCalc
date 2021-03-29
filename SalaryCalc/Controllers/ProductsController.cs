@@ -60,7 +60,6 @@ namespace SalaryCalc.Controllers
             return View(product);
         }
 
-        [HttpPost]
         [Authorize(Policy = "Administrator")]
         public IActionResult Delete(Guid id)
         {

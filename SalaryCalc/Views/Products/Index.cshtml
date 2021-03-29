@@ -8,19 +8,17 @@
     <div>
         @if (Model.Any())
         {
-            <ul>
                 @foreach (Product product in Model)
                 {
-                <li>
+                <div style="margin-bottom: 25px; margin-right: 25px">
                     <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id">
                         <img alt="Изображение товара @product.Name" class="img-product, passe-partout" src="~/img/products/@product.ImagePath" alt="" />
                         <h4>@($"{product.Name}")</h4>
                     </a>
                     <label asp-for="@product.Price"></label>
                     <output>: @product.Price</output>
-                </li>
+                </div>
                 }
-            </ul>
         }
     </div>
 </div>

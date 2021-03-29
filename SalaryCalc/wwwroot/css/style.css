@@ -2,14 +2,39 @@
     background: #fcfcfc;
 }
 
+input[type=text] {
+    width: 50%;
+    padding: 10px 10px;
+}
+
 a {
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
 }
 
+.button-save {
+    background: #98B9C8; /* Цвет фона */
+    color: #000000; /* Цвет текста */
+    padding: 0.5rem 1.5rem; /* Поля вокруг текста */
+    border-radius: 3px; /* Скругляем уголки */
+    margin: 20px; /* Отступы */
+}
+
+.button-save:hover {
+    background: #F5F5DC; /* Цвет фона кнопки сохранения при наведении курсором мыши */
+}
+
 .button-delete {
-    border: 2px solid #e34761; /* Параметры рамки */
-    background: #f3dbdf; /* Цвет фона */
-    padding: 5px 20px; /* Поля вокруг текста */
+    background: #FFE4E1; /* Цвет фона */
+    color: #000000; /* Цвет текста */
+    padding: 0.5rem 1.5rem; /* Поля вокруг текста */
+    text-decoration: none; /* Убираем подчёркивание */
+    border-radius: 3px; /* Скругляем уголки */
+    margin: 5px; /* Отступы */
+    margin-top: 0px; /* Отступ сверху */
+}
+
+.button-delete:hover {
+    background: #F5F5DC; /* Цвет фона кнопки удаления при наведении курсором мыши */
 }
 
 .img-product {
@@ -21,8 +46,6 @@ a {
     padding: 5px; /* Ширина паспарту */
     background: #00BFFF; /* Цвет фона  паспарту */
     border: 0px solid #666; /* Параметры рамки */
-    margin-right: 10px; /* Отступ справа */
-    margin-bottom: 10px; /* Отступ снизу */
 }
 
 a .passe-partout:hover {

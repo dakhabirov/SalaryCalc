@@ -16,7 +16,7 @@
                     <a asp-area="Admin" asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id">Редактировать</a>
                     <form style="display: inline-block" asp-area="Admin" asp-controller="Users" asp-action="Delete" method="post">
                         <input type="hidden" name="id" value="@user.Id" />
-                        <button type="submit">Удалить</button>
+                        <input class="button-delete" type="submit" value="Удалить" />
                     </form>
                 </div>
                 }
