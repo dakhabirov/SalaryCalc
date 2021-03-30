@@ -3,7 +3,26 @@
 }
 
 a {
+    color: black;
     text-decoration: none; /* Отменяем подчеркивание у ссылки */
+}
+
+.grid-container {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    justify-content: space-around;
+}
+
+.grid-item {
+    font-size: 30px;
+    margin: 20px;
+}
+
+.profile-panel {
+    grid-row-start: 1;
+    grid-row-end: 3;
 }
 
 input[type=text], select {
@@ -24,7 +43,7 @@ label {
     display: inline-block;
 }
 
-input[type=submit] {
+.button-default {
     background-color: #4CAF50;
     color: white;
     padding: 12px 20px;
@@ -34,7 +53,8 @@ input[type=submit] {
     margin: 10px;
 }
 
-input[type=submit]:hover {
+.button-default:hover {
+    color: white;
     background-color: #45a049;
 }
 
@@ -72,5 +92,7 @@ input[type=submit]:hover {
 }
 
 a .passe-partout:hover {
-    border: 2px solid lightblue; /* Цвет фона паспарту при наведении на ссылку курсора мыши */
+    outline-color: lightblue;
+    outline-style: outset;
+    outline-width: thin;
 }

@@ -5,22 +5,11 @@
 <section>
     <h2><a asp-controller="Account" asp-action="Index">@Model.UserName</a></h2>
 </section>
-<ul>
-    @if (Model.Salaries != null)
-    {
-        @foreach (Salary salary in Model.Salaries)
-        {
-           <li>
-               <a asp-controller="Salary" asp-action="Show" asp-route-id="@Model.Id, @salary.Date">@salary.Date</a>
-          </li>
-        }
-    }
-</ul>
 
-<p>
-    <a asp-controller="Products" asp-action="Index" class="nav-link active" aria-current="page">Товары</a>
-    <a asp-controller="Sales" asp-action="Index" class="nav-link active" aria-current="page">Продажи</a>
-    <a asp-controller="Salaries" asp-action="Index" class="nav-link active" aria-current="page">Моя заработная плата</a>
-</p>
+<div class="grid-container">
+    <div class="grid-item"><a class="button-default" asp-controller="Products" asp-action="Index">Товары</a></div>
+    <div class="grid-item"><a class="button-default" asp-controller="Sales" asp-action="Index">Продажи</a></div>
+    <div class="grid-item"><a class="button-default" asp-controller="Salaries" asp-action="Index">Моя заработная плата</a></div>
+</div>
 
 <a asp-controller="Account" asp-action="LogOff">Выйти из учетной запси</a>
