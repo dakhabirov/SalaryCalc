@@ -2,21 +2,28 @@
 
 <div>
     <h2>@Model.DateAdded</h2>
-    <ul>
+    <div>
         @foreach (SaleProduct saleProduct in Model.SaleProducts)
         {
-            <li>
+        <div class="col">
+            <div class="card" style="width: 20rem">
                 <a asp-controller="Products" asp-action="Index" asp-route-id="@saleProduct.Product.Id">
-                    <img  alt="Изображение товара @saleProduct.Product.Name" class="img-product, passe-partout" src="~/img/products/@saleProduct.Product.ImagePath" />
-                    <h4>@($"{saleProduct.Product.Name}")</h4>
+                    <img class="card-img-top" src="~/img/products/@saleProduct.Product.ImagePath" alt="Изображение товара @saleProduct.Product.Name" />
                 </a>
-            </li>
+                <div class="card-body">
+                    <h5 class="card-title">@($"{saleProduct.Product.Name}")</h5>
+                    <label asp-for="@saleProduct.Product.Price"></label>
+                    <output>: @saleProduct.Product.Price</output><br />
+                    <a asp-controller="Products" asp-action="Index" asp-route-id="@saleProduct.Product.Id" class="btn btn-primary">Подробнее</a>
+                </div>
+            </div>
+        </div>
         }
-    </ul>
+    </div>
 
-    <a asp-controller="Sales" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <a class="btn btn-primary" asp-controller="Sales" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
     <form style="display: inline-block" asp-controller="Sales" asp-action="Delete" method="post">
         <input type="hidden" name="id" value="@Model.Id" />
-        <button class="button-delete" type="submit">Удалить</button>
+        <button class="btn btn-primary" type="submit">Удалить</button>
     </form>
 </div>

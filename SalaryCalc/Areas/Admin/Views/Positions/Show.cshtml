@@ -4,9 +4,9 @@
     <h2>@Model.Name</h2>
     <h4>@Model.HourlyRate</h4>
 
-    <a asp-area="admin" asp-controller="Positions" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <a class="btn btn-primary" asp-area="admin" asp-controller="Positions" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
     <form style="display: inline-block" asp-area="admin" asp-controller="Positions" asp-action="Delete" method="post">
         <input type="hidden" name="id" value="@Model.Id" />
-        <button class="button-delete" type="submit">Удалить</button>
+        <button class="btn btn-primary" type="submit">Удалить</button>
     </form>
 </div>

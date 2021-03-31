@@ -1,26 +1,21 @@
 ﻿@model IQueryable<User>
 
+<h1>Пользователи</h1>
 <div>
-    <h1>Пользователи</h1>
-    <div>
-        @if (Model.Any())
-        {
-            <div>
-                @foreach (User user in Model)
-                {
-                <div>
-                    <a asp-area="admin" asp-controller="Users" asp-action="Index" asp-route-id="@user.Id">
-                        @($"{user.UserName}")
-                    </a><br />
-
-                    <a asp-area="Admin" asp-controller="Users" asp-action="Edit" asp-route-id="@user.Id">Редактировать</a>
-                    <form style="display: inline-block" asp-area="Admin" asp-controller="Users" asp-action="Delete" method="post">
-                        <input type="hidden" name="id" value="@user.Id" />
-                        <button class="button-delete" type="submit">Удалить</button>
-                    </form>
+    @if (Model.Any())
+    {
+        <div class="list-group">
+            @foreach (User user in Model)
+            {
+            <div class="col">
+                <div class="card" style="width: 20rem">
+                    <div class="card-body">
+                        <h5 class="card-title">@($"{user.Fullname}")</h5>
+                        <a asp-area="admin" asp-controller="Users" asp-action="Index" asp-route-id="@user.Id" class="btn btn-primary">Подробнее</a>
+                    </div>
                 </div>
-                }
             </div>
-        }
-    </div>
+            }
+        </div>
+    }
 </div>

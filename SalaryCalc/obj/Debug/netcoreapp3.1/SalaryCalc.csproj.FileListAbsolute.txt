@@ -177,7 +177,6 @@ C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Ra
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\MetatagsPartial.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ScriptsPartial.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Projects\DotNet\ASP.NET Core\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.RazorTargetAssemblyInfo.cache

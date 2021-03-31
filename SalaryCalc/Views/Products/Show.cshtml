@@ -3,22 +3,16 @@
 <div>
     <div>
         <img alt="Изображение товара @Model.Name" class="img-product, passe-partout" src="~/img/products/@Model.ImagePath" />
-    </div>
-    <h2>@Model.Name</h2>
-    <ul>
-        <li>
+        <h2>@Model.Name</h2>
             <label asp-for="@Model.Price"></label>
-            <output>: @Model.Price</output>
-        </li>
-        <li>
+            <output>: @Model.Price</output><br />
             <label asp-for="@Model.Category"></label>
-            <output>: @Model.Category.Name</output>
-        </li>
-    </ul>
+            <output>: @Model.Category.Name</output><br />
+    </div>
 
-    <a asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
+    <a class="btn btn-primary" asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
     <form style="display: inline-block" asp-controller="Products" asp-action="Delete" method="post">
         <input type="hidden" name="id" value="@Model.Id" />
-        <button class="button-delete" type="submit">Удалить</button>
+        <button class="btn btn-primary" type="submit">Удалить</button>
     </form>
 </div>

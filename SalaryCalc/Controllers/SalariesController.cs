@@ -5,7 +5,7 @@ using System;
 
 namespace SalaryCalc.Controllers
 {
-    [Authorize(Policy = "Manager")]
+    [Authorize]
     public class SalariesController : Controller
     {
         private readonly DataManager dataManager;

@@ -1,13 +1,13 @@
-﻿<div>
-    <h1>Панель администратора</h1>
-    <div>
-        <a asp-area="admin" asp-controller="Users" asp-action="Index" class="nav-link active">Пользователи</a>
+﻿<section>
+    <div class="row">
+        <h4>Панель администратора</h4>
+        <div class="col-2">
+            <a class="btn btn-primary" asp-area="admin" asp-controller="Users" asp-action="Index">Пользователи</a>
+            <a class="btn btn-primary" asp-area="admin" asp-controller="Positions" asp-action="Index">Должности</a>
+            <a class="btn btn-primary" asp-area="admin" asp-controller="Categories" asp-action="Index">Категории товаров</a>
+        </div>
+        <div class="col-10">
+
+        </div>
     </div>
-    <div>
-        <a asp-area="admin" asp-controller="Positions" asp-action="Index" class="nav-link active">Должности</a>
-    </div>
-    <div>
-        <a asp-area="admin" asp-controller="Categories" asp-action="Index" class="nav-link active">Категории товаров</a>
-    </div>
-    <a asp-area="" asp-controller="Account" asp-action="LogOff">Выйти из учетной запси</a>
-</div>
+</section>

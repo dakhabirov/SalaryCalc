@@ -77,7 +77,7 @@ namespace SalaryCalc.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async System.Threading.Tasks.Task<IActionResult> LoginAsync(LoginViewModel model, string returnUrl)
+        public async Task<IActionResult> LoginAsync(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid)    // проверяем введенные данные на валидность
             {
