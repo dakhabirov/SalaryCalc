@@ -88,14 +88,15 @@ namespace SalaryCalc
 
             app.UseStatusCodePages();
             app.UseStaticFiles();   // подключаем поддержку статических файлов (css, js и др.)
-            app.UseRouting();
+            app.UseRouting();   // добавляем возможности маршрутизации,
+                                // благодаря этому приложение может соотносить запросы с определенными маршрутами.
 
             // используем аутентификацию
             app.UseAuthentication();
             // используем авторизацию
             app.UseAuthorization();
 
-            // регистрируем нужные маршруты
+            // устанавливаем адреса, которые будут обрабатываться
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
