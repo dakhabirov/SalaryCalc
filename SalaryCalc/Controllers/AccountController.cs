@@ -77,7 +77,7 @@ namespace SalaryCalc.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> LoginAsync(LoginViewModel model, string returnUrl)
+        public async Task<IActionResult> LoginAsync(LoginViewModel model)
         {
             if (ModelState.IsValid)    // проверяем введенные данные на валидность
             {
@@ -90,7 +90,7 @@ namespace SalaryCalc.Controllers
                     var result = await signInManager.PasswordSignInAsync(user, model.Password, model.IsRemember, false);
                     if (result.Succeeded)
                     {
-                        return Redirect(returnUrl ?? "/");
+                        return Redirect(model.ReturnUrl ?? "/");
                     }
                     else
                         ModelState.AddModelError("", "Неверное имя пользователя или пароль. Пожалуйста, проверьте введенные данные.");
@@ -104,7 +104,7 @@ namespace SalaryCalc.Controllers
         /// <summary>
         /// Выйти из учетной записи.
         /// </summary>
-        public async System.Threading.Tasks.Task<IActionResult> LogOffAsync()
+        public async Task<IActionResult> LogOffAsync()
         {
             await signInManager.SignOutAsync();
             return Redirect("/");

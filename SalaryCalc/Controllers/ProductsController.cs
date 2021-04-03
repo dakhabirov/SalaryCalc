@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace SalaryCalc.Controllers
 {
+    [Authorize(Policy = "manager")]
     public class ProductsController : Controller
     {
         private readonly AppDbContext context;
@@ -33,6 +34,7 @@ namespace SalaryCalc.Controllers
             return View(dataManager.Products.GetProducts());
         }
 
+        [Authorize(Policy = "Administrator")]
         public IActionResult Edit(Guid id)
         {
             var product = id == default ? new Product() : dataManager.Products.GetProductById(id);
