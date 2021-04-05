@@ -7,6 +7,9 @@ namespace SalaryCalc.Models.Entities
 {
     public class User : IdentityUser
     {
+        [Display(Name = "Имя пользователя")]
+        public override string UserName { get; set; }
+
         /// <summary>
         /// Полное имя.
         /// </summary>

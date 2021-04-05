@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SalaryCalc.Middlewares;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using SalaryCalc.Models.Repositories.EntityFramework;
@@ -22,14 +23,14 @@ namespace SalaryCalc
 
         public void ConfigureServices(IServiceCollection services)
         {
-            // подключаем конфиг из appsettings.json
+            // Подключаем конфиг из appsettings.json.
             Configuration.Bind("Project", new Config());
 
-            // добавляем поддержку контроллеров и представлений (MVC)
+            // Добавляем поддержку контроллеров и представлений (MVC).
             services.AddControllersWithViews();
 
-            // подключаем нужный функционал приложения в качестве сервисов (через внедрение зависимостей)
-            services.AddTransient<IUsersRepository, EFUsersRepository>();   // связываем интерфейс с его реализацией
+            // Подключаем нужный функционал приложения в качестве сервисов (через внедрение зависимостей).
+            services.AddTransient<IUsersRepository, EFUsersRepository>();   // Связываем интерфейс с его реализацией.
             services.AddTransient<IPositionsRepository, EFPositionsRepository>();
             services.AddTransient<IProductsRepository, EFProductsRepository>();
             services.AddTransient<ICategoriesRepository, EFCategoriesRepository>();
@@ -37,41 +38,39 @@ namespace SalaryCalc
             services.AddTransient<ISaleProductsRepository, EFSaleProductsRepository>();
             services.AddTransient<DataManager>();
 
-            // подключаем контекст БД
+            // Подключаем контекст БД.
             services.AddDbContext<AppDbContext>(c => c.UseSqlServer(Config.ConnectionString));
 
-            // настраиваем identity в систему
+            // Настраиваем identity в систему.
             services.AddIdentity<User, IdentityRole>(config =>
             {
-                // конфигурируем требования к паролю
+                // Конфигурируем требования к паролю.
                 config.Password.RequireDigit = false;
                 config.Password.RequireLowercase = false;
                 config.Password.RequireNonAlphanumeric = false;
                 config.Password.RequireUppercase = false;
                 config.Password.RequiredLength = 6;
             })
-            .AddEntityFrameworkStores<AppDbContext>();  // устанавливаем тип хранилища, которое будет применяться
+            .AddEntityFrameworkStores<AppDbContext>();  // Устанавливаем тип хранилища, которое будет применяться
                                                         // в Identity для хранения данных. В качестве типа хранилища
-                                                        // здесь указывается наша база данных
+                                                        // здесь указывается бд.
 
-            // настраиваем authentication cookie
+            // Настраиваем authentication cookie.
             services.ConfigureApplicationCookie(config =>
             {
-                config.Cookie.Name = "Authentication";  // название для cookie
-                config.Cookie.HttpOnly = true;  // cookie недоступна на клиентской стороне
-                config.LoginPath = "/Account/Login";   // направляем пользователя на страницу аутентификации
-                config.AccessDeniedPath = "/Account/AccessDenied"; // если у пользователя нет доступа к странице, направляем его сюда
+                config.Cookie.Name = "Authentication";  // Нзвание для cookie.
+                config.Cookie.HttpOnly = true;  // Cookie недоступна на клиентской стороне.
+                config.LoginPath = "/Account/Login";   // Направляем пользователя на страницу аутентификации.
             });
 
-            // добавляем авторизацию
+            // Добавляем авторизацию.
             services.AddAuthorization(options =>
             {
-                // создаем политики для ограничения доступов
+                // Создаем политики для ограничения доступов.
                 options.AddPolicy("Administrator", builder =>
                 {
                     builder.RequireClaim(ClaimTypes.Role, "Administrator");
                 });
-
                 options.AddPolicy("Manager", builder =>
                 {
                     builder.RequireAssertion(u => u.User.HasClaim(ClaimTypes.Role, "Administrator")
@@ -82,25 +81,28 @@ namespace SalaryCalc
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // в процессе разработки важно видеть подробную информацию об ошибках
+            // В процессе разработки важно видеть подробную информацию об ошибках.
             if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
             app.UseStatusCodePages();
-            app.UseStaticFiles();   // подключаем поддержку статических файлов (css, js и др.)
-            app.UseRouting();   // добавляем возможности маршрутизации,
+            app.UseStaticFiles();   // Подключаем поддержку статических файлов (css, js и др.)
+
+            app.UseRouting();   // Добавляем возможности маршрутизации,
                                 // благодаря этому приложение может соотносить запросы с определенными маршрутами.
 
-            // подключаем аутентификацию
+            // Подключаем обработчик ошибок.
+            app.UseMiddleware<ErrorHandlingMiddleware>();
+            // Подключаем аутентификацию.
             app.UseAuthentication();
-            // подключаем авторизацию
+            // Подключаем авторизацию.
             app.UseAuthorization();
 
-            // устанавливаем адреса, которые будут обрабатываться
+            // Устанавливаем адреса, которые будут обрабатываться.
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("admin", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapDefaultControllerRoute();  // маршрут по умолчанию
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
