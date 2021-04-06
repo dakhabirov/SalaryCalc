@@ -21,21 +21,22 @@ namespace SalaryCalc
 
         public Startup(IConfiguration configuration) => Configuration = configuration;
 
+        // Dependency Injection.
         public void ConfigureServices(IServiceCollection services)
         {
             // Подключаем конфиг из appsettings.json.
             Configuration.Bind("Project", new Config());
 
-            // Добавляем поддержку контроллеров и представлений (MVC).
+            // Добавляем поддержку MVC.
             services.AddControllersWithViews();
 
-            // Подключаем нужный функционал приложения в качестве сервисов (через внедрение зависимостей).
-            services.AddTransient<IUsersRepository, EFUsersRepository>();   // Связываем интерфейс с его реализацией.
-            services.AddTransient<IPositionsRepository, EFPositionsRepository>();
-            services.AddTransient<IProductsRepository, EFProductsRepository>();
-            services.AddTransient<ICategoriesRepository, EFCategoriesRepository>();
-            services.AddTransient<ISalesRepository, EFSalesRepository>();
-            services.AddTransient<ISaleProductsRepository, EFSaleProductsRepository>();
+            // Подключаем свои сервисы.
+            services.AddScoped<IUsersRepository, EFUsersRepository>();
+            services.AddScoped<IPositionsRepository, EFPositionsRepository>();
+            services.AddScoped<IProductsRepository, EFProductsRepository>();
+            services.AddScoped<ICategoriesRepository, EFCategoriesRepository>();
+            services.AddScoped<ISalesRepository, EFSalesRepository>();
+            services.AddScoped<ISaleProductsRepository, EFSaleProductsRepository>();
             services.AddTransient<DataManager>();
 
             // Подключаем контекст БД.

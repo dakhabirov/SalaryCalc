@@ -22,7 +22,7 @@
                 <label asp-for="ImagePath"></label><br />
                 <input type="file" name="imageFile" id="imageFile" />
                 <div>
-                    <img alt="Изображение товара @Model.Name" class="img-product, passe-partout" src="~/img/products/@Model.ImagePath" />
+                    <img alt="Изображение товара @Model.Name" src="~/img/products/@Model.ImagePath" />
                 </div>
             </div>
             <input class="btn btn-primary" type="submit" value="Сохранить" />
