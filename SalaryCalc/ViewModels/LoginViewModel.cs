@@ -8,8 +8,6 @@ namespace SalaryCalc.ViewModels
         [Required]
         [Display(Name = "Пароль")]
         public string Password { get; set; }
-        [Display(Name = " Запомнить данные для входа")]
-        public bool IsRemember { get; set; }
         [Required]
         public string ReturnUrl { get; set; }
     }

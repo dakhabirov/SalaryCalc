@@ -87,7 +87,7 @@ namespace SalaryCalc.Controllers
                 if (user != null)
                 {
                     // проверяем введенный пароль
-                    var result = await signInManager.PasswordSignInAsync(user, model.Password, model.IsRemember, false);
+                    var result = await signInManager.PasswordSignInAsync(user, model.Password, false, false);
                     if (result.Succeeded)
                     {
                         return Redirect(model.ReturnUrl ?? "/");

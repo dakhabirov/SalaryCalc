@@ -7,13 +7,13 @@
         <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewBag.returnUrl" method="post">
             <img class="mb-4" src="/img/yotaicon.png" alt="Иконка" width="57" height="72">
             <h1 class="h3 mb-3 fw-normal">Вход в личный кабинет</h1>
-            <div asp-validation-summary="ModelOnly"></div>
-            <input asp-for="UserName" class="form-control" placeholder="Имя пользователя" autofocus="">
-            <input asp-for="Password" type="password" class="form-control" placeholder="Пароль">
-            <input asp-for="IsRemember" type="checkbox">
-            <label asp-for="IsRemember"></label>
-            <button class="w-100 btn btn-lg btn-primary" type="submit">Войти</button>
-            <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
+            <div class="d-grid gap-2 col-6 mx-auto">
+                <div asp-validation-summary="ModelOnly"></div>
+                <input asp-for="UserName" class="form-control" placeholder="Имя пользователя" autofocus="">
+                <input asp-for="Password" type="password" class="form-control" placeholder="Пароль">
+                <button class="btn btn-primary" type="submit">Войти</button>
+                <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
+            </div>
             <input hidden asp-for="ReturnUrl">
         </form>
     </main>
