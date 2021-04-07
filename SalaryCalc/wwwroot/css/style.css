@@ -14,3 +14,12 @@ label {
 input {
     padding: 4px;
 }
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff
+}
+
+#hero {
+    width: 100%;
+    height: 100vh;
+}

@@ -1,21 +1,24 @@
 ﻿<header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-xxl">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+        <div class="container">
             <a asp-area="default" asp-controller="Home" asp-action="Index" class="navbar-brand">@Config.CompanyName</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Мой профиль
                         </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdown">
                             <li><a class="dropdown-item" asp-area="default" asp-controller="Salaries" asp-action="Index">Моя заработная плата</a></li>
                             <li><a class="dropdown-item" asp-area="default" asp-controller="Account" asp-action="Index">Настройки</a></li>
                             <li><a class="dropdown-item" asp-area="default" asp-controller="Account" asp-action="LogOff">Выйти</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a asp-area="admin" asp-controller="Home" asp-action="Index" class="nav-link active" aria-current="page">Панель администратора</a>
+                        <a asp-area="admin" asp-controller="Home" asp-action="Index" class="nav-link" aria-current="page">Панель администратора</a>
                     </li>
                 </ul>
                 <form class="d-flex">
