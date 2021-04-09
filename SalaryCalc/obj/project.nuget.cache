@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "I5q3NHv4v66Sksqupkxe6659pANRB3QM7gTgDcnYscDyRW3te7wy+bXiEn234ZH6o84p/mL6JOJ+2KV+JXKWjw==",
+  "dgSpecHash": "M8YOod5KiL7EHjF183jjVYYiJaLEHwY9Ic7slCe4GB82Xeqh8t9+scDlJLaRRj1rHdCLgWO3KHWeptLXx1DMbw==",
   "success": true,
-  "projectFilePath": "C:\\Projects\\DotNet\\ASP.NET Core\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj",
+  "projectFilePath": "C:\\Projects\\dotnet\\ASPNETCore\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dakha\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\dakha\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",

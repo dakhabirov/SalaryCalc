@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\DotNet\\ASP.NET Core\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj": {}
+    "C:\\Projects\\dotnet\\ASPNETCore\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\DotNet\\ASP.NET Core\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj": {
+    "C:\\Projects\\dotnet\\ASPNETCore\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\DotNet\\ASP.NET Core\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj",
+        "projectUniqueName": "C:\\Projects\\dotnet\\ASPNETCore\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj",
         "projectName": "SalaryCalc",
-        "projectPath": "C:\\Projects\\DotNet\\ASP.NET Core\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj",
+        "projectPath": "C:\\Projects\\dotnet\\ASPNETCore\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj",
         "packagesPath": "C:\\Users\\dakha\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\DotNet\\ASP.NET Core\\SalaryCalc\\SalaryCalc\\obj\\",
+        "outputPath": "C:\\Projects\\dotnet\\ASPNETCore\\SalaryCalc\\SalaryCalc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
