@@ -1,26 +1,28 @@
 ﻿@model IQueryable<Product>
 
-<section>
-    <div class="row">
-        <div class="col-2">
+<section id="products" class="products">
+    <div class="container text-center mt-5">
+        <div class="section-title">
             <h3>Товары</h3>
             <a class="btn btn-primary" asp-controller="Products" asp-action="Edit" asp-route-id="">Добавить</a>
         </div>
-        <div class="col-9" >
+        <div class="row">
             @if (Model.Any())
             {
                 @foreach (Product product in Model)
                 {
-                    <div class="col">
-                        <div class="card" style="width: 20rem">
-                            <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id">
-                                <img class="card-img-top" src="~/img/products/@product.ImagePath" alt="Изображение товара @product.Name" />
-                            </a>
-                            <div class="card-body">
-                                <h5 class="card-title">@($"{product.Name}")</h5>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img class="img-fluid" src="~/img/products/@product.ImagePath" alt="Изображение товара @product.Name" />
+                                <div class="action">
+                                    <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id" class="btn btn-primary">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <h4>@product.Name</h4>
                                 <label asp-for="@product.Price"></label>
-                                <output>: @product.Price</output><br />
-                                <a asp-controller="Products" asp-action="Index" asp-route-id="@product.Id" class="btn btn-primary">Подробнее</a>
+                                <output> @product.Price</output><br />
                             </div>
                         </div>
                     </div>
