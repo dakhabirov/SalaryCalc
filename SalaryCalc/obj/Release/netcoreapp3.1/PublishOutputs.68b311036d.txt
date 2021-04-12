@@ -1,7 +1,8 @@
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\SalaryCalc.exe
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\bootstrap.css
-C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\style.css
+C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\css\site.css
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\products\defprodimg.jpg
+C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\products\yotaicon.png
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\products\yotarouter.jpg
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\products\yotasim.png
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\img\yotaicon.png

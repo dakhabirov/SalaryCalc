@@ -4,7 +4,7 @@
 
 a {
     color: black;
-    text-decoration: none;
+    text-decoration: none; /* Отменяем подчеркивание у ссылки */
 }
 
     a:hover {
@@ -127,39 +127,7 @@ input {
                 color: #777777;
             }
 
-        .products .member:hover .action {
-            opacity: 1;
-            bottom: 15px;
-        }
-
-.menu .icon-box {
-    border: 1px solid #afafaf;
-    padding: 80px 80px;
-    transition: all ease-in-out 0.3s;
-    background: #fff;
-}
-
-    .menu .icon-box .icon {
-        margin: 0 auto;
-        width: 64px;
-        height: 64px;
-        background: #ffc451;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s;
-        margin-bottom: 20px;
-    }
-
-    .menu .icon-box a {
-        font-weight: 700;
-        margin-bottom: 15px;
-        font-size: 24px;
-    }
-
-    .menu .icon-box:hover {
-        border-color: #fff;
-        box-shadow: 0px 0 25px 0 rgba(0,0,0,0.5);
-        transform: translateY(-10px);
-    }
+            .products .member:hover .action {
+                opacity: 1;
+                bottom: 15px;
+            }
