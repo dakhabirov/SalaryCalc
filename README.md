@@ -1,8 +1,8 @@
 # SalaryCalc
 Payroll system
 
-Used technologies: ASP.NET Core, Entity Framework Core, Microsoft Identity Manager
+Used technologies: ASP.NET Core, Entity Framework Core
 
-Database - MS SQL
+Database - MS SQL Server
+
 The database connection string is in appsettings.json
-
