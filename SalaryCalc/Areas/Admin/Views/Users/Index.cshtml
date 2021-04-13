@@ -1,21 +1,30 @@
 ﻿@model IQueryable<User>
 
-<h1>Пользователи</h1>
-<div>
-    @if (Model.Any())
-    {
-        <div class="list-group">
-            @foreach (User user in Model)
+<section id="item" class="item">
+    <div class="container text-center mt-3">
+        <div class="section-title">
+            <h3>Пользователи</h3>
+        </div>
+        <div class="row">
+            @if (Model.Any())
             {
-            <div class="col">
-                <div class="card" style="width: 20rem">
-                    <div class="card-body">
-                        <h5 class="card-title">@($"{user.Fullname}")</h5>
-                        <a asp-area="admin" asp-controller="Users" asp-action="Index" asp-route-id="@user.Id" class="btn btn-primary">Подробнее</a>
+                @foreach (User user in Model)
+                {
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="~/img/Icons/man.svg" />
+                                <div class="action">
+                                    <a asp-controller="Users" asp-action="Index" asp-route-id="@user.Id" class="btn btn-primary">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <output>@user.Fullname</output><br />
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                }
             }
         </div>
-    }
-</div>
+    </div>
+</section>

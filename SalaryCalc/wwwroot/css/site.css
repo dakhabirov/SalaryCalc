@@ -23,40 +23,6 @@ input {
     color: #fff
 }
 
-#hero {
-    width: 100%;
-    height: 100vh;
-}
-
-    #hero h1 {
-        font-size: 56px;
-        font-weight: 700;
-        line-height: 64px;
-        color: black;
-        font-family: "Poppins", sans-serif;
-    }
-
-    #hero h2 {
-        color: black;
-        margin: 10px 0 0 0;
-        font-size: 24px;
-    }
-
-    #hero .icon-box h3 {
-        font-weight: 700;
-        margin-top: 10px;
-        font-size: 50px;
-        line-height: 50px;
-    }
-
-        #hero .icon-box h3 a {
-            color: lightblue;
-        }
-
-            #hero .icon-box h3 a:hover {
-                color: #ffc451;
-            }
-
 .icon-box {
     padding: 30px 20px;
     border: 1px solid lightblue;
@@ -68,23 +34,30 @@ input {
         border-color: #ffc451;
     }
 
-.products {
+.item {
     padding: 5px;
 }
 
-    .products .member {
+    .item .member {
         margin: 20px 0 20px 0;
         overflow: hidden;
         border-radius: 5px;
         box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.3);
     }
 
-        .products .member .member-img {
+        .item .member .member-img {
             position: relative;
+            padding: 10px 10px 0 10px;
         }
 
+            .item .member .member-img img {
+                object-fit: contain;
+                width: 100%;
+                height: 100%;
+            }
 
-        .products .member .action {
+
+        .item .member .action {
             position: absolute;
             left: 0;
             bottom: 30px;
@@ -93,41 +66,42 @@ input {
             transition: ease-in-out 0.3s;
         }
 
-            .products .member .action a {
+            .item .member .action a {
                 transition: ease-in-out 0.3s;
                 color: #151515;
-                border-radius: 4px;
-                border-color: lightblue;
+                border-radius: 5px;
+                border-color: dimgray;
+                border-width: 0px;
                 background: rgb(230, 230, 230, 0.8);
             }
 
-                .products .member .action a:hover {
+                .item .member .action a:hover {
                     background: #ffc451;
                 }
 
-        .products .member .member-info {
+        .item .member .member-info {
             padding: 15px 15px;
         }
 
-            .products .member .member-info h4 {
+            .item .member .member-info h4 {
                 font-weight: 700;
                 margin-bottom: 5px;
                 font-size: 24px;
             }
 
-            .products .member .member-info label {
+            .item .member .member-info label {
                 font-size: 18px;
                 font-style: italic;
                 color: #777777;
             }
 
-            .products .member .member-info output {
+            .item .member .member-info output {
                 font-size: 18px;
                 font-style: italic;
                 color: #777777;
             }
 
-        .products .member:hover .action {
+        .item .member:hover .action {
             opacity: 1;
             bottom: 15px;
         }
