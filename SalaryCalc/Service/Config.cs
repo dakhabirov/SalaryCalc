@@ -14,5 +14,15 @@
         /// Название компании.
         /// </summary>
         public static string CompanyName { get; set; }
+
+        /// <summary>
+        /// Номер телефона.
+        /// </summary>
+        public static string Phone { get; set; }
+
+        /// <summary>
+        /// Электронный адрес.
+        /// </summary>
+        public static string Email { get; set; }
     }
 }

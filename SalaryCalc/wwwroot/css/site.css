@@ -23,16 +23,11 @@ input {
     color: #fff
 }
 
-.icon-box {
-    padding: 30px 20px;
-    border: 1px solid lightblue;
-    height: 100%;
-    text-align: center;
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
-
-    .icon-box:hover {
-        border-color: #ffc451;
-    }
 
 .item {
     padding: 5px;
@@ -149,4 +144,30 @@ input {
             border-color: #fff;
             box-shadow: 0px 0 25px 0 rgba(0,0,0,0.5);
             transform: translateY(-10px);
+        }
+
+footer {
+    margin-top: auto;
+    background: #afafaf;
+    color: #fff;
+    padding: 40px 0 20px 0;
+}
+
+    footer .footer-info {
+        margin-bottom: 3px;
+    }
+
+        footer .footer-info h3 {
+            font-size: 28px;
+            margin: 0 0 20px 0;
+            padding: 2px 0 2px 0;
+            line-height: 1;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        footer .footer-info p {
+            font-size: 14px;
+            margin: 10px 0 0 0;
+            line-height: 24px;
         }

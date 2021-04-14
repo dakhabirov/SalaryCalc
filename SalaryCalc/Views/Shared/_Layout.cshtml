@@ -9,19 +9,20 @@
     @await Html.PartialAsync("CssPartial")
 </head>
 <body>
-    <!-- Header -->
-    @await Html.PartialAsync("HeaderPartial")
+    <div class="page">
+        <!-- Header -->
+        @await Html.PartialAsync("HeaderPartial")
 
 
-    <div class="container mt-5">
-        @RenderBody()
-        <p class="float-end"><a href="#">Наверх</a></p>
+        <div class="container mt-5">
+            @RenderBody()
+        </div>
+
+        <!-- Footer -->
+        @await Html.PartialAsync("FooterPartial")
+
+        <!-- Scripts -->
+        @await Html.PartialAsync("ScriptsPartial")
     </div>
-
-    <!-- Footer -->
-    @await Html.PartialAsync("FooterPartial")
-
-    <!-- Scripts -->
-    @await Html.PartialAsync("ScriptsPartial")
 </body>
 </html>
