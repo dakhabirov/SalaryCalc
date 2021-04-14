@@ -29,6 +29,55 @@ input {
     min-height: 100vh;
 }
 
+.menu {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+    .menu a {
+        font-size: 24px;
+    }
+
+        .menu a:hover {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 24px;
+            color: gray;
+        }
+
+    .menu .icon-box {
+        border: 1px solid #afafaf;
+        margin-top: 10px;
+        padding: 80px 80px;
+        transition: all ease-in-out 0.3s;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0 5px 0 rgba(0,0,0,0.1);
+    }
+
+        .menu .icon-box .icon {
+            margin: 0 auto;
+            width: 64px;
+            height: 64px;
+            background: #ffc451;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .menu .icon-box:hover {
+            border-color: #fff;
+            box-shadow: 0px 0 25px 0 rgba(0,0,0,0.5);
+            transform: translateY(-10px);
+        }
+
+        .menu .icon-box h4 {
+            text-align: center;
+        }
+
 .item {
     padding: 5px;
 }
@@ -101,55 +150,9 @@ input {
             bottom: 15px;
         }
 
-.menu {
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
-
-    .menu a {
-        font-size: 24px;
-    }
-
-        .menu a:hover {
-            font-weight: 700;
-            margin-bottom: 15px;
-            font-size: 24px;
-            color: gray;
-        }
-
-    .menu .icon-box {
-        border: 1px solid #afafaf;
-        margin-top: 10px;
-        padding: 80px 80px;
-        transition: all ease-in-out 0.3s;
-        background: #fff;
-        border-radius: 5px;
-        box-shadow: 0px 0 5px 0 rgba(0,0,0,0.1);
-    }
-
-        .menu .icon-box .icon {
-            margin: 0 auto;
-            width: 64px;
-            height: 64px;
-            background: #ffc451;
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: 0.3s;
-            margin-bottom: 20px;
-        }
-
-        .menu .icon-box:hover {
-            border-color: #fff;
-            box-shadow: 0px 0 25px 0 rgba(0,0,0,0.5);
-            transform: translateY(-10px);
-        }
-
 footer {
     margin-top: auto;
-    background: #afafaf;
-    color: #fff;
+    background: #f3f3f3;
     padding: 40px 0 20px 0;
 }
 

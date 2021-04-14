@@ -288,7 +288,6 @@ C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razo
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
-C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Account\_Layout.cshtml.g.cs
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Products\Edit.cshtml.g.cs
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Products\Index.cshtml.g.cs
@@ -313,3 +312,4 @@ C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Sala
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.dll
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.pdb
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.genruntimeconfig.cache
+C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Razor\Views\Account\_Layout.cshtml.g.cs

@@ -9,11 +9,10 @@
     @await Html.PartialAsync("CssPartial")
 </head>
 <body>
-    <div class="container mt-5">
-        @RenderBody()
+    <div class="page">
+        <div class="container mt-5">
+            @RenderBody()
+        </div>
     </div>
-
-    <!-- Scripts -->
-    @await Html.PartialAsync("ScriptsPartial")
 </body>
 </html>
