@@ -1,8 +1,11 @@
 ﻿@model Position
 
-<div>
+<div class="mt-3 mb-5">
     <h2>@Model.Name</h2>
-    <h4>@Model.HourlyRate</h4>
+    <p>
+        <label asp-for="HourlyRate"></label>
+        <output>: @Model.HourlyRate</output><br />
+    </p>
 
     <a class="btn btn-primary" asp-area="admin" asp-controller="Positions" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>
     <form style="display: inline-block" asp-area="admin" asp-controller="Positions" asp-action="Delete" method="post">

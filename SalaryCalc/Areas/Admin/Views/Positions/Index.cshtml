@@ -1,21 +1,31 @@
 ﻿@model IQueryable<Position>
 
-<div>
-    <h1>Должности</h1>
-    <div class="nav-link active">
-        <a class="btn btn-primary" asp-area="admin" asp-controller="Positions" asp-action="Edit" asp-route-id="">Добавить</a>
-    </div>
-    <div>
-        @if (Model.Any())
-        {
-            <ul>
+<section id="item" class="item">
+    <div class="container text-center mt-3">
+        <div class="section-title">
+            <h3>Должности</h3>
+            <a class="btn btn-primary" asp-controller="Positions" asp-action="Edit" asp-route-id="">Добавить</a>
+        </div>
+        <div class="row">
+            @if (Model.Any())
+            {
                 @foreach (Position position in Model)
                 {
-                <li>
-                    <a asp-area="admin" asp-controller="Positions" asp-action="Index" asp-route-id="@position.Id">@position.Name</a>
-                </li>
+                    <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                        <div class="member">
+                            <div class="member-img">
+                                <img src="~/img/Icons/man.svg" />
+                                <div class="action">
+                                    <a asp-controller="Positions" asp-action="Index" asp-route-id="@position.Id" class="btn btn-primary">Подробнее</a>
+                                </div>
+                            </div>
+                            <div class="member-info">
+                                <output>@position.Name</output><br />
+                            </div>
+                        </div>
+                    </div>
                 }
-            </ul>
-        }
+            }
+        </div>
     </div>
-</div>
+</section>

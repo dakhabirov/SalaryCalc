@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "M8YOod5KiL7EHjF183jjVYYiJaLEHwY9Ic7slCe4GB82Xeqh8t9+scDlJLaRRj1rHdCLgWO3KHWeptLXx1DMbw==",
+  "dgSpecHash": "JWeM0Op+I3196RL4s3nf3piVpdZdOjTr8RpoXB/TqiG5OABdf0zRZGUS5rqbZCKqGXz9xRNi1l5QB9ta88NLPQ==",
   "success": true,
   "projectFilePath": "C:\\Projects\\dotnet\\ASPNETCore\\SalaryCalc\\SalaryCalc\\SalaryCalc.csproj",
   "expectedPackageFiles": [

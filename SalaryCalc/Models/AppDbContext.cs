@@ -82,8 +82,8 @@ namespace SalaryCalc.Models
             modelBuilder.Entity<Position>().HasData(new Position
             {
                 Id = positionGuid,
-                Name = "Должность",
-                HourlyRate = 100
+                Name = "Администратор",
+                HourlyRate = 250
             });
 
             // Cоздаем роли.

@@ -13,14 +13,14 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 3 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Areas\Admin\Views\_ViewImports.cshtml"
+#line 2 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Areas\Admin\Views\_ViewImports.cshtml"
 using SalaryCalc.Models.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a6f0a25dd986824a6d78dc2e3c634fde45e29476", @"/Areas/Admin/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5bae58dae4768d27585a81d6ef48ab3b14487932", @"/Areas/Admin/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"8f0142029d92ac4ba4584008e0446cb7910a3d60", @"/Areas/Admin/Views/_ViewImports.cshtml")]
     public class Areas_Admin_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

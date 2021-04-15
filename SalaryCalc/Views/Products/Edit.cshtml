@@ -1,31 +1,30 @@
 ﻿@model Product
 
-<div>
-    <div>
-        <form asp-controller="Products" asp-action="Edit" method="post" enctype="multipart/form-data">
+<div class="mt-3">
+    <h2>Запись</h2>
+    <form asp-controller="Products" asp-action="Edit" method="post" enctype="multipart/form-data">
+        <div>
+            <label asp-for="Name"></label><br />
+            <input asp-for="Name" />
+            <span asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label asp-for="Category.Name"></label><br />
+            @Html.DropDownListFor(model => model.CategoryId, ViewBag.Categories as SelectList)
+            <span asp-validation-for="Category"></span>
+        </div>
+        <div>
+            <label asp-for="Price"></label><br />
+            <input asp-for="Price" />
+            <span asp-validation-for="Price"></span>
+        </div>
+        <div>
+            <label asp-for="ImagePath"></label><br />
+            <input type="file" name="imageFile" id="imageFile" />
             <div>
-                <label asp-for="Name"></label><br />
-                <input asp-for="Name" />
-                <span asp-validation-for="Name"></span>
+                <img alt="Изображение товара @Model.Name" src="~/img/products/@Model.ImagePath" />
             </div>
-            <div>
-                <label asp-for="Category.Name"></label><br />
-                @Html.DropDownListFor(model => model.CategoryId, ViewBag.Categories as SelectList)
-                <span asp-validation-for="Category"></span>
-            </div>
-            <div>
-                <label asp-for="Price"></label><br />
-                <input asp-for="Price" />
-                <span asp-validation-for="Price"></span>
-            </div>
-            <div>
-                <label asp-for="ImagePath"></label><br />
-                <input type="file" name="imageFile" id="imageFile" />
-                <div>
-                    <img alt="Изображение товара @Model.Name" src="~/img/products/@Model.ImagePath" />
-                </div>
-            </div>
-            <button class="btn btn-primary" type="submit">Сохранить</button>
-        </form>
-    </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Сохранить</button>
+    </form>
 </div>

@@ -1,21 +1,19 @@
 ﻿@model IQueryable<Category>
 
-<div>
-    <h1>Категории товаров</h1>
-    <div class="nav-link active">
+<div class="container text-center mt-3 mb-3">
+    <div class="section-title">
+        <h3>Категории товаров</h3>
         <a class="btn btn-primary" asp-controller="Categories" asp-action="Edit" asp-route-id="">Добавить</a>
     </div>
-    <div>
-        @if (Model.Any())
-        {
-            <ul>
-                @foreach (Category category in Model)
-                {
-                    <li>
-                        <a asp-controller="Categories" asp-action="Index" asp-route-id="@category.Id">@category.Name</a>
-                    </li>
-                }
-            </ul>
-        }
-    </div>
+</div>
+<div class="mb-5">
+    @if (Model.Any())
+    {
+        <div class="list-group">
+            @foreach (Category category in Model)
+            {
+                <a class="list-group-item list-group-item-action" asp-controller="Categories" asp-action="Index" asp-route-id="@category.Id">@category.Name</a>
+            }
+        </div>
+    }
 </div>

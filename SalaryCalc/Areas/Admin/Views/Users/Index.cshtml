@@ -4,6 +4,7 @@
     <div class="container text-center mt-3">
         <div class="section-title">
             <h3>Пользователи</h3>
+            <a class="btn btn-primary" asp-controller="Users" asp-action="Edit" asp-route-id="">Добавить</a>
         </div>
         <div class="row">
             @if (Model.Any())
@@ -13,7 +14,7 @@
                     <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
                         <div class="member">
                             <div class="member-img">
-                                <img src="~/img/Icons/man.svg" />
+                                <img src="~/img/Icons/employee.svg" />
                                 <div class="action">
                                     <a asp-controller="Users" asp-action="Index" asp-route-id="@user.Id" class="btn btn-primary">Подробнее</a>
                                 </div>
