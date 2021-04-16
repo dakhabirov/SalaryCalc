@@ -17,7 +17,7 @@ namespace SalaryCalc.Models
         /// <summary>
         /// Пользователи.
         /// </summary>
-        public DbSet<User> Users { get; set; }
+        public new DbSet<User> Users { get; set; }
 
         /// <summary>
         /// Должности.
