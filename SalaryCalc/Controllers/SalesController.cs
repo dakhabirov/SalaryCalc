@@ -51,6 +51,8 @@ namespace SalaryCalc.Controllers
                 foreach (Guid productId in productIds)
                 {
                     dataManager.SaleProducts.SaveSaleProducts(sale, productId, 1);
+                    Product product = dataManager.Products.GetProductById(productId);
+                    dataManager.Salaries.SaveSalary(sale.UserId, product.Price, sale.DateAdded);
                 }
                 context.SaveChanges();
                 return RedirectToAction(nameof(SalesController.Index));

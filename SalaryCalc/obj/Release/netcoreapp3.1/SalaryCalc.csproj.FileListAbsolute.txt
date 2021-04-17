@@ -164,7 +164,6 @@ C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\bin\Release\netcoreapp3.1\ru
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\bin\Release\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\SalaryCalc.csprojAssemblyReference.cache
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\SalaryCalc.AssemblyInfoInputs.cache
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\SalaryCalc.AssemblyInfo.cs
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\SalaryCalc.csproj.CoreCompileInputs.cache
@@ -218,3 +217,4 @@ C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\Sa
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\SalaryCalc.dll
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\SalaryCalc.pdb
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Release\netcoreapp3.1\SalaryCalc.genruntimeconfig.cache
+C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\bin\Release\netcoreapp3.1\web.config

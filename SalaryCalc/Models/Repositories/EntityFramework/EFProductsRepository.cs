@@ -25,7 +25,7 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             context.Products.Where(p => p.Id == Id)
                                 .Include(c => c.Category)
                                     .FirstOrDefault();    // подгружаем категорию из базы данных в контекст
-            return context.Products.FirstOrDefault(p => p.Id == Id);
+            return context.Products.Find(Id);
         }
 
         public Product GetProductByName(string Name)

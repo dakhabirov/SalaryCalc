@@ -33,6 +33,7 @@ namespace SalaryCalc
             // Подключаем свои сервисы.
             services.AddScoped<IUsersRepository, EFUsersRepository>();
             services.AddScoped<IPositionsRepository, EFPositionsRepository>();
+            services.AddScoped<ISalariesRepository, EFSalariesRepository>();
             services.AddScoped<IProductsRepository, EFProductsRepository>();
             services.AddScoped<ICategoriesRepository, EFCategoriesRepository>();
             services.AddScoped<ISalesRepository, EFSalesRepository>();
