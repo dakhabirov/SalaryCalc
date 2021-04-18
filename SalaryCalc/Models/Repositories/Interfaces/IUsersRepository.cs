@@ -1,11 +1,18 @@
 ﻿using SalaryCalc.Models.Entities;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SalaryCalc.Models.Repositories.Interfaces
 {
     public interface IUsersRepository
     {
+        /// <summary>
+        /// Получить идентификатор текущего пользователя.
+        /// </summary>
+        /// <returns>Идентификатор пользователя.</returns>
+        string GetCurrentUserId();
+
         /// <summary>
         /// Получить всех пользователей.
         /// </summary>
@@ -29,10 +36,11 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <summary>
         /// Получить заработную плату по дате.
         /// </summary>
-        /// <param name="date">Дата.</param>
         /// <param name="userId">Идентификатор пользователя.</param>
+        /// <param name="Year">Год заработной платы.</param>
+        /// <param name="Month">Месяц заработной платы.</param>
         /// <returns>Заработная плата.</returns>
-        Salary GetSalaryByDate(string userId, DateTime date);
+        Salary GetSalaryByDate(string userId, ushort Year, byte Month);
 
         /// <summary>
         /// Получить все заработные платы сотрудника.

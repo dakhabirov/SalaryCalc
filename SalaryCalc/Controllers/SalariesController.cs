@@ -15,14 +15,20 @@ namespace SalaryCalc.Controllers
             this.dataManager = dataManager;
         }
 
-        public IActionResult Index(string userId, DateTime date)
+        public IActionResult Index(ushort year, byte month)
         {
-            if (date != default)
+            if (year != default)
             {
-                return View("Show", dataManager.Users.GetSalaryByDate(userId, date));
+                return View("Show", dataManager.Users.GetSalaryByDate(dataManager.Users.GetCurrentUserId(), year, month));
             }
 
-            return View(dataManager.Users.GetSalaries(userId));
+            var currentYear = (ushort)DateTime.Now.Year;
+            var currentMonth = (byte)DateTime.Now.Month;
+
+            var currentSalary = dataManager.Salaries.GetSalaryByDate(dataManager.Users.GetCurrentUserId(), currentYear, currentMonth);
+            ViewBag.CurrentSalary = currentSalary.Sum;
+
+            return View(dataManager.Users.GetSalaries(dataManager.Users.GetCurrentUserId()));
         }
     }
 }

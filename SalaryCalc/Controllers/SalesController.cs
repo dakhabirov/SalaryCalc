@@ -52,7 +52,7 @@ namespace SalaryCalc.Controllers
                 {
                     dataManager.SaleProducts.SaveSaleProducts(sale, productId, 1);
                     Product product = dataManager.Products.GetProductById(productId);
-                    dataManager.Salaries.SaveSalary(sale.UserId, product.Price, sale.DateAdded);
+                    dataManager.Salaries.SaveSalary(sale.UserId, product.Price, (ushort)sale.DateAdded.Year, (byte)sale.DateAdded.Month);
                 }
                 context.SaveChanges();
                 return RedirectToAction(nameof(SalesController.Index));

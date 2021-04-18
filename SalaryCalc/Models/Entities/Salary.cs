@@ -16,8 +16,13 @@ namespace SalaryCalc.Models.Entities
         public string UserId { get; set; }
 
         /// <summary>
-        /// Дата выплаты заработной платы.
+        /// Год заработной платы.
         /// </summary>
-        public DateTime Date { get; set; }
+        public ushort Year { get; set; }
+
+        /// <summary>
+        /// Месяц заработной платы.
+        /// </summary>
+        public byte Month { get; set; }
     }
 }

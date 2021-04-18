@@ -1,18 +1,30 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using SalaryCalc.Models.Entities;
 using SalaryCalc.Models.Repositories.Interfaces;
 using System;
 using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace SalaryCalc.Models.Repositories.EntityFramework
 {
     public class EFUsersRepository : IUsersRepository
     {
         private readonly AppDbContext context;
+        private readonly IHttpContextAccessor httpContextAccessor;
 
-        public EFUsersRepository(AppDbContext context)
+        public EFUsersRepository(AppDbContext context, IHttpContextAccessor httpContextAccessor)
         {
             this.context = context;
+            this.httpContextAccessor = httpContextAccessor;
+        }
+
+        public string GetCurrentUserId()
+        {
+            var userId = httpContextAccessor.HttpContext.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            return userId;
         }
 
         public IQueryable<User> GetUsers()
@@ -39,9 +51,9 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             return context.Salaries.Where(s => s.UserId == id);
         }
 
-        public Salary GetSalaryByDate(string userId, DateTime date)
+        public Salary GetSalaryByDate(string userId, ushort year, byte month)
         {
-            return context.Salaries.Where(s => s.UserId == userId & s.Date == date).FirstOrDefault();
+            return context.Salaries.Where(s => s.UserId == userId & s.Year == year & s.Month == month).FirstOrDefault();
         }
 
         public void SaveUser(User model)

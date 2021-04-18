@@ -84,7 +84,7 @@ namespace SalaryCalc
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             // В процессе разработки важно видеть подробную информацию об ошибках.
-            if (env.IsDevelopment())
+           // if (env.IsDevelopment())
                 app.UseDeveloperExceptionPage();
 
             app.UseStatusCodePages();

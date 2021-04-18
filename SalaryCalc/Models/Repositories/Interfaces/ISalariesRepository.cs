@@ -12,7 +12,7 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <param name="userId">Идентификатор сотрудника.</param>
         /// <param name="sum">Сумма заработной платы.</param>
         /// <param name="date">Дата выплаты заработной платы.</param>
-        void SaveSalary(string userId, double sum, DateTime date);
+        void SaveSalary(string userId, double sum, ushort year, byte month);
 
         /// <summary>
         /// Добавить заработную плату.
@@ -20,7 +20,7 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <param name="userId">Идентификатор сотрудника.</param>
         /// <param name="sum">Сумма заработной платы.</param>
         /// <param name="date">Дата выплаты заработной платы.</param>
-        void CreateSalary(string userId, double sum, DateTime date);
+        void CreateSalary(string userId, double sum, ushort year, byte month);
 
         /// <summary>
         /// Обновить заработную плату.
@@ -28,7 +28,7 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <param name="salary">Заработная плата.</param>
         /// <param name="sum">Сумма заработной платы.</param>
         /// <param name="date">Дата выплаты заработной платы.</param>
-        void UpdateSalary(Salary salary, double sum, DateTime date);
+        void UpdateSalary(Salary salary, double sum, ushort year, byte month);
 
         /// <summary>
         /// Удалить заработную плату.
@@ -46,8 +46,9 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <summary>
         /// Получить заработную плату по дате выплаты.
         /// </summary>
+        /// <param name="userId">Идентификатор сотрудника.</param>
         /// <param name="salaryDate">Дата выплаты заработной платы.</param>
         /// <returns>Заработная плата.</returns>
-        Salary GetSalaryByDate(DateTime salaryDate);
+        Salary GetSalaryByDate(string userId, ushort year, byte month);
     }
 }

@@ -19,40 +19,42 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             return context.Salaries.Where(s => s.UserId == userId);
         }
 
-        public Salary GetSalaryByDate(DateTime salaryDate)
+        public Salary GetSalaryByDate(string userId, ushort year, byte month)
         {
-            return context.Salaries.Where(s => s.Date == salaryDate).FirstOrDefault();
+            return context.Salaries.Where(s => s.UserId == userId & s.Year == year & s.Month == month).FirstOrDefault();
         }
 
-        public void SaveSalary(string userId, double sum, DateTime date)
+        public void SaveSalary(string userId, double sum, ushort year, byte month)
         {
-            Salary salary = context.Salaries.Where(s => s.UserId == userId & s.Date == date).FirstOrDefault();
+            Salary salary = context.Salaries.Where(s => s.UserId == userId & s.Year == year & s.Month == month).FirstOrDefault();
             if (salary == default)
             {
-                CreateSalary(userId, sum, date);
+                CreateSalary(userId, sum, year, month);
             }
             else
             {
-                UpdateSalary(salary, sum, date);
+                UpdateSalary(salary, sum, year, month);
             }
         }
 
-        public void CreateSalary(string userId, double sum, DateTime date)
+        public void CreateSalary(string userId, double sum, ushort year, byte month)
         {
             Salary salary = new Salary
             {
                 UserId = userId,
                 Sum = sum,
-                Date = date
+                Year = year,
+                Month = month
             };
             context.Salaries.AddAsync(salary);
             context.SaveChanges();
         }
 
-        public void UpdateSalary(Salary salary, double sum, DateTime date)
+        public void UpdateSalary(Salary salary, double sum, ushort year, byte month)
         {
             salary.Sum += sum;
-            salary.Date = date;
+            salary.Year = year;
+            salary.Month = month;
             context.SaveChanges();
         }
 

@@ -1,1 +1,19 @@
-﻿<h1>Моя заработная плата</h1>
+﻿@model IQueryable<Salary>
+
+<div class="container text-center mt-3 mb-3">
+    <div class="section-title">
+        <h3>Моя заработная плата</h3>
+        <h4>В текущем расчетном периоде вы заработаете @ViewBag.CurrentSalary</h4>
+    </div>
+</div>
+<div class="mb-5">
+    @if (Model.Any())
+    {
+        <div class="list-group">
+            @foreach (Salary salary in Model)
+            {
+                <a class="list-group-item list-group-item-action" asp-controller="Salaries" asp-action="Index" asp-route-id="@salary.Id">@salary.Year — @salary.Month</a>
+            }
+        </div>
+     }
+</div>

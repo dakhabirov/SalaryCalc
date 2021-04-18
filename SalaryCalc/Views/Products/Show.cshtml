@@ -4,10 +4,10 @@
     <div>
         <img alt="Изображение товара @Model.Name" class="img-product, passe-partout" src="~/img/products/@Model.ImagePath" />
         <h2>@Model.Name</h2>
-            <label asp-for="@Model.Price"></label>
-            <output>: @Model.Price</output><br />
-            <label asp-for="@Model.Category"></label>
-            <output>: @Model.Category.Name</output><br />
+        <label asp-for="@Model.Price"></label>
+        <output>: @Model.Price</output><br />
+        <label asp-for="@Model.Category"></label>
+        <output>: @Model.Category.Name</output><br />
     </div>
 
     <a class="btn btn-primary" asp-controller="Products" asp-action="Edit" asp-route-id="@Model.Id">Редактировать</a>

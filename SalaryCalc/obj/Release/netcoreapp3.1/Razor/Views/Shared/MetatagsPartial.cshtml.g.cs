@@ -13,35 +13,35 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
-#line 2 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
+#line 1 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
 using SalaryCalc.Controllers;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
+#line 2 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
 using SalaryCalc.Service;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
+#line 3 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
 using SalaryCalc.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
+#line 4 "C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\Views\_ViewImports.cshtml"
 using SalaryCalc.Models.Entities;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0453b6b1484b23b3160187167922fb8ecea75af8", @"/Views/Shared/MetatagsPartial.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5575d19220ae8aeea1de8472fe159f38474590df", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"3f41c1ccdcfc522bb38ce9c32275f44150e3757a", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_MetatagsPartial : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
