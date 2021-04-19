@@ -2,6 +2,7 @@
 using SalaryCalc.Models.Entities;
 using SalaryCalc.Models.Repositories.Interfaces;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SalaryCalc.Models.Repositories.EntityFramework
@@ -30,9 +31,9 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             return context.Sales.FirstOrDefault(s => s.Id == Id);
         }
 
-        public Sale GetSaleBySaleDate(DateTime saleDate)
+        public List<Sale> GetSalesByDate(ushort year, byte month)
         {
-            return context.Sales.FirstOrDefault(s => s.DateAdded == saleDate);
+            return context.Sales.Where(s => s.DateAdded.Year == year & s.DateAdded.Month == month).ToList();
         }
 
         public void SaveSale(Sale sale)

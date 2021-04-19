@@ -12,7 +12,7 @@
         <div class="list-group">
             @foreach (Salary salary in Model)
             {
-                <a class="list-group-item list-group-item-action" asp-controller="Salaries" asp-action="Index" asp-route-id="@salary.Id">@salary.Year — @salary.Month</a>
+                <a class="list-group-item list-group-item-action" asp-controller="Salaries" asp-action="Index" asp-route-year="@salary.Year" asp-route-month="@salary.Month">@salary.Year — @salary.Month</a>
             }
         </div>
      }

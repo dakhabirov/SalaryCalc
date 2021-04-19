@@ -1,6 +1,15 @@
 ﻿@model Salary
 
-<div>
-    <h2>@Model.Year — @Model.Month</h2>
-    <h2>@Model.Sum</h2>
+<div class="container text-center mt-3 mb-3">
+    <div class="section-title">
+        <h3>Моя заработная плата</h3>
+        <h4>@Model.Month месяц @Model.Year</h4>
+        <h4>@Model.Sum</h4>
+    </div>
+</div>
+<div class="mb-5 list-group">
+    @foreach (Sale sale in ViewBag.Sales)
+    {
+        <a class="list-group-item list-group-item-action" asp-controller="Sales" asp-action="Index" asp-route-id="@sale.Id">@sale.DateAdded</a>
+    }
 </div>

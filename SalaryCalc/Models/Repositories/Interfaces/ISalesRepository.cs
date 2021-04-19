@@ -1,5 +1,6 @@
 ﻿using SalaryCalc.Models.Entities;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace SalaryCalc.Models.Repositories.Interfaces
@@ -22,9 +23,10 @@ namespace SalaryCalc.Models.Repositories.Interfaces
         /// <summary>
         /// Получить продажу по дате.
         /// </summary>
-        /// <param name="saleDate">Дата продажи.</param>
+        /// <param name="year">Год.</param>
+        /// <param name="month">Год.</param>
         /// <returns>Продажа.</returns>
-        Sale GetSaleBySaleDate(DateTime saleDate);
+        List<Sale> GetSalesByDate(ushort year, byte month);
 
         /// <summary>
         /// Сохранить изменения.
