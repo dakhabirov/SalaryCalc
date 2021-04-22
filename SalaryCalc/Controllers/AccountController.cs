@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using SalaryCalc.ViewModels;
-using System;
 using System.Threading.Tasks;
 
 namespace SalaryCalc.Controllers
@@ -31,10 +30,11 @@ namespace SalaryCalc.Controllers
             return View();
         }
 
-        public IActionResult Register()
+        public IActionResult Register(string returnUrl)
         {
             SelectList positions = new SelectList(context.Positions, "Id", "Name"); // должности
             ViewBag.Positions = positions;
+            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
@@ -53,9 +53,10 @@ namespace SalaryCalc.Controllers
                 var result = await userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    // установка куки
-                    await signInManager.SignInAsync(user, false);
-                    return RedirectToAction("Index", "Home");
+                    //// установка куки
+                    //await signInManager.SignInAsync(user, false);
+                    //return RedirectToAction("Login", "Account");
+                    return Redirect(model.ReturnUrl ?? "/");
                 }
                 else
                 {

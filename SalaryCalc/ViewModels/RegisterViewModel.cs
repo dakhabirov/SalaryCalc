@@ -16,5 +16,8 @@ namespace SalaryCalc.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Подтвердить пароль")]
         public string PasswordConfirm { get; set; }
+
+        [Required]
+        public string ReturnUrl { get; set; }
     }
 }

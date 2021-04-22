@@ -1,6 +1,6 @@
 ﻿@model Sale
 
-<div class="mt-3">
+<div class="mt-3 mb-5">
     <h2>Запись</h2>
     <form asp-controller="Sales" asp-action="Edit" method="post">
         <input type="hidden" asp-for="UserId" />
@@ -10,7 +10,7 @@
             <span asp-validation-for="DateAdded"></span>
         </div>
         <label>Проданные товары</label><br />
-        @Html.ListBox("productIds", ViewBag.Products as MultiSelectList)
-        <input class="btn btn-primary" type="submit" value="Сохранить" />
+        @Html.ListBox("productIds", ViewBag.Products as MultiSelectList)<br />
+        <input class="btn btn-primary mt-3" type="submit" value="Сохранить" />
     </form>
 </div>

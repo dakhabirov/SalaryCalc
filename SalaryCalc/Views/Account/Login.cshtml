@@ -3,14 +3,14 @@
 <body class="text-center">
     <main class="form-signin">
         <form asp-controller="Account" asp-action="Login" asp-route-returnUrl="@ViewBag.returnUrl" method="post">
-            <img class="mb-4" src="/img/yotaicon.png" alt="Иконка" width="57" height="72">
+            <img class="mt-3 mb-5" src="/img/shop.png" alt="Иконка" width="200" height="200">
             <h1 class="h3 mb-3 fw-normal">Вход в личный кабинет</h1>
             <div class="d-grid gap-2 col-6 mx-auto">
                 <div asp-validation-summary="ModelOnly"></div>
                 <input asp-for="UserName" class="form-control" placeholder="Имя пользователя" autofocus="">
                 <input asp-for="Password" type="password" class="form-control" placeholder="Пароль">
                 <button class="btn btn-primary" type="submit">Войти</button>
-                <a asp-controller="Account" asp-action="Register">Зарегистрироваться</a>
+                <a class="btn btn-success" asp-controller="Account" asp-action="Register" asp-route-returnUrl="@ViewBag.returnUrl">Зарегистрироваться</a>
             </div>
             <input hidden asp-for="ReturnUrl">
         </form>
