@@ -1,12 +1,12 @@
 ﻿@model IQueryable<User>
 
 <section id="item" class="item">
-    <div class="container text-center mt-3">
+    <div class="container text-center mt-4 mb-4">
         <div class="section-title">
             <h3>Пользователи</h3>
-            <a class="btn btn-primary" asp-controller="Users" asp-action="Edit">Добавить</a>
+            <a class="btn btn-primary mt-2" asp-controller="Users" asp-action="Edit">Добавить</a>
         </div>
-        <div class="row">
+        <div class="row mt-4">
             @if (Model.Any())
             {
                 @foreach (User user in Model)

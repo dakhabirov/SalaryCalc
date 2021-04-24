@@ -27,7 +27,6 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
             context.Products.Include(s => s.SaleProducts)
                                         .ThenInclude(sp => sp.Product)
                                         .ToList();  // список товаров в продаже
-
             return context.Sales.FirstOrDefault(s => s.Id == Id);
         }
 

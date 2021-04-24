@@ -1,12 +1,11 @@
 ﻿@model IQueryable<Salary>
 
-<div class="container text-center mt-3 mb-3">
-    <div class="section-title">
-        <h3>Моя заработная плата</h3>
-        <h4>В текущем расчетном периоде вы заработаете @ViewBag.CurrentSalary</h4>
-    </div>
+<div class="text-center mt-4 mb-4">
+    <h3>Заработная плата</h3>
+    <h4>В текущем расчетном периоде вы заработаете <label style="font-weight: bold">@ViewBag.CurrentSalary</label> рублей</h4>
 </div>
 <div class="mb-5">
+    <h5>Заработные платы</h5>
     @if (Model.Any())
     {
         <div class="list-group">

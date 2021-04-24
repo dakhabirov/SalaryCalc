@@ -31,7 +31,10 @@ namespace SalaryCalc.Controllers
             var currentMonth = (byte)DateTime.Now.Month;
 
             var currentSalary = dataManager.Salaries.GetSalaryByDate(currentUserId, currentYear, currentMonth);
-            ViewBag.CurrentSalary = currentSalary.Sum;
+            if (currentSalary != default)
+                ViewBag.CurrentSalary = currentSalary.Sum;
+            else
+                ViewBag.CurrentSalary = 0;
 
             return View(dataManager.Users.GetSalaries(dataManager.Users.GetCurrentUserId()));
         }

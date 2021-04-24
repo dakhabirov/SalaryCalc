@@ -52,9 +52,11 @@ namespace SalaryCalc.Models.Repositories.EntityFramework
 
         public void UpdateSalary(Salary salary, double sum, ushort year, byte month)
         {
-            salary.Sum += sum;
+            salary.Sum = sum;
             salary.Year = year;
             salary.Month = month;
+            if (salary.Sum == 0)
+                context.Salaries.Remove(salary);
             context.SaveChanges();
         }
 

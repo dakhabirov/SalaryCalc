@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using SalaryCalc.Models;
 using SalaryCalc.Models.Entities;
 using System;
+using System.Linq;
 
 namespace SalaryCalc.Controllers
 {
@@ -52,9 +53,8 @@ namespace SalaryCalc.Controllers
                 {
                     dataManager.SaleProducts.SaveSaleProducts(sale, productId, 1);
                     Product product = dataManager.Products.GetProductById(productId);
-                    dataManager.Salaries.SaveSalary(sale.UserId, product.Price, (ushort)sale.DateAdded.Year, (byte)sale.DateAdded.Month);
+                    dataManager.Salaries.SaveSalary(sale.UserId, product.Price * 0.05, (ushort)sale.DateAdded.Year, (byte)sale.DateAdded.Month);
                 }
-                context.SaveChanges();
                 return RedirectToAction(nameof(SalesController.Index));
             }
             return View(sale);
@@ -63,7 +63,26 @@ namespace SalaryCalc.Controllers
         [HttpPost]
         public IActionResult Delete(Guid id)
         {
-            dataManager.Sales.DeleteSale(id);
+            //
+            // Обновляем заработную плату.
+            //
+            var sale = dataManager.Sales.GetSaleById(id);
+            var salary = dataManager.Salaries.GetSalaries(sale.UserId)
+                .Where(s => s.Month == sale.DateAdded.Month && s.Year == sale.DateAdded.Year)
+                .FirstOrDefault();
+            if (salary != default)
+            {
+                var saleProducts = dataManager.SaleProducts.GetSaleProducts(id);
+                double sum = 0;  // Сумма проданных товаров.
+                foreach (var sp in saleProducts)
+                {
+                    sum += sp.Product.Price * 0.05;
+                }
+                dataManager.Salaries.UpdateSalary(salary, salary.Sum - sum, salary.Year, salary.Month);
+            }
+
+            context.Sales.Remove(sale);
+            context.SaveChanges();
             return RedirectToAction(nameof(SalesController.Index));
         }
     }
