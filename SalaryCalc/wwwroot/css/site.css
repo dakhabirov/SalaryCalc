@@ -57,6 +57,7 @@ input {
 
         .menu .icon-box .icon {
             margin: 0 auto;
+            padding: 15px;
             width: 64px;
             height: 64px;
             background: #ffc451;
