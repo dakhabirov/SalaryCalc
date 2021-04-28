@@ -313,3 +313,4 @@ C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\Sala
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.dll
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.pdb
 C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.genruntimeconfig.cache
+C:\Projects\dotnet\ASPNETCore\SalaryCalc\SalaryCalc\obj\Debug\netcoreapp3.1\SalaryCalc.csprojAssemblyReference.cache

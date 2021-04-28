@@ -1,5 +1,4 @@
 ﻿using SalaryCalc.Models.Entities;
-using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace SalaryCalc.ViewModels
@@ -14,7 +13,7 @@ namespace SalaryCalc.ViewModels
         [Required(ErrorMessage = "Поле должно быть установлено")]
         [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         [DataType(DataType.Password)]
-        [Display(Name = "Подтвердить пароль")]
+        [Display(Name = "Подтверждение пароля")]
         public string PasswordConfirm { get; set; }
 
         [Required]
