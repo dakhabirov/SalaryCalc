@@ -10,25 +10,25 @@
 ## Скриншоты
 
 ### Авторизация
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/Authorization.PNG "Изображение: Авторизация")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/Authorization.PNG "Изображение: Авторизация")
 
 ### Главное меню
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/Main.PNG "Изображение: Главное меню")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/Main.PNG "Изображение: Главное меню")
 
 ### Панель администратора
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/AdminPanel.PNG "Изображение: Панель администратора")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/AdminPanel.PNG "Изображение: Панель администратора")
 
 ### Товары
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/Products.PNG "Изображение: Товары")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/Products.PNG "Изображение: Товары")
 
 ### Категории товаров
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/Categories.PNG "Изображение: Категории товаров")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/Categories.PNG "Изображение: Категории товаров")
 
 ### Продажи
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/Sales.PNG "Изображение: Продажи")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/Sales.PNG "Изображение: Продажи")
 
 ### Пользователи
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/Users.PNG "Изображение: Пользователи")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/Users.PNG "Изображение: Пользователи")
 
 ### Должности
-![alt text](https://github.com/dakhabirov/SalaryCalc/blob/master/Resourses/Screenshots/Positions.PNG "Изображение: Должности")
+![alt text](https://github.com/dakhabirov/SalaryCalc/Resourses/Screenshots/Positions.PNG "Изображение: Должности")
