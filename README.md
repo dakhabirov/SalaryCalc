@@ -1,4 +1,4 @@
-# Корпоративный сайт
+# Корпоративный сайт магазина
 ### Стек: ASP.NET Core, Entity Framework Core, MS SQL Server, HTML, CSS, Bootstrap
 
 **Реализовано**    
