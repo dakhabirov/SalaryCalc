@@ -24,7 +24,7 @@
 ### Категории товаров
 ![alt text](https://github.com/dakhabirov/SalaryCalc/blob/main/Resourses/Screenshots/Categories.PNG "Изображение: Категории товаров")
 
-### Заработная плата
+### Продажи
 ![alt text](https://github.com/dakhabirov/SalaryCalc/blob/main/Resourses/Screenshots/Salary.PNG "Изображение: Заработная плата")
 
 ### Пользователи
