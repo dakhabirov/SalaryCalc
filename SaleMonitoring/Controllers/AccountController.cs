@@ -51,6 +51,7 @@ namespace SalaryCalc.Controllers
                 User user = new User { UserName = model.UserName, Fullname = model.Fullname, PositionId = model.PositionId };
                 // добавляем пользователя
                 var result = await userManager.CreateAsync(user, model.Password);
+                await userManager.AddToRoleAsync(user, "user");
                 if (result.Succeeded)
                 {
                     //// установка куки
