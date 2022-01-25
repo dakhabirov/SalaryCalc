@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace SalaryCalc.Controllers
 {
-    [Authorize(Policy = "user")]
+    [Authorize(Policy = "manager")]
     public class SalesController : Controller
     {
         private readonly AppDbContext context;
@@ -60,7 +60,6 @@ namespace SalaryCalc.Controllers
             return View(sale);
         }
 
-        [Authorize(Policy = "administrator")]
         [HttpPost]
         public IActionResult Delete(Guid id)
         {

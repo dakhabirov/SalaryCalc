@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace SalaryCalc.Controllers
 {
-    [Authorize(Policy = "user")]
+    [Authorize(Policy = "manager")]
     public class ProductsController : Controller
     {
         private readonly AppDbContext context;

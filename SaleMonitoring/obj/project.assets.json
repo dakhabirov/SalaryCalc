@@ -6621,11 +6621,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dakha\\Source\\Repos\\SaleMonitoring\\SaleMonitoring\\SaleMonitoring.csproj",
+      "projectUniqueName": "C:\\Projects\\dotnet\\ASPNETCore\\SaleMonitoring\\SaleMonitoring\\SaleMonitoring.csproj",
       "projectName": "SaleMonitoring",
-      "projectPath": "C:\\Users\\dakha\\Source\\Repos\\SaleMonitoring\\SaleMonitoring\\SaleMonitoring.csproj",
+      "projectPath": "C:\\Projects\\dotnet\\ASPNETCore\\SaleMonitoring\\SaleMonitoring\\SaleMonitoring.csproj",
       "packagesPath": "C:\\Users\\dakha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dakha\\Source\\Repos\\SaleMonitoring\\SaleMonitoring\\obj\\",
+      "outputPath": "C:\\Projects\\dotnet\\ASPNETCore\\SaleMonitoring\\SaleMonitoring\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
@@ -6699,7 +6699,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
