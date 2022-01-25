@@ -73,10 +73,10 @@ namespace SalaryCalc
                 {
                     builder.RequireClaim(ClaimTypes.Role, "Administrator");
                 });
-                options.AddPolicy("Manager", builder =>
+                options.AddPolicy("User", builder =>
                 {
                     builder.RequireAssertion(u => u.User.HasClaim(ClaimTypes.Role, "Administrator")
-                                                  || u.User.HasClaim(ClaimTypes.Role, "Manager"));
+                                                  || u.User.HasClaim(ClaimTypes.Role, "User"));
                 });
             });
         }

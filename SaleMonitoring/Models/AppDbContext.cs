@@ -74,6 +74,7 @@ namespace SalaryCalc.Models
 
             // Генерируем уникальные идентификаторы.
             Guid adminRoleGuid = Guid.NewGuid();
+            Guid userRoleGuid = Guid.NewGuid();
             Guid adminGuid = Guid.NewGuid();
             Guid positionGuid = Guid.NewGuid();
             Guid categoryGuid = Guid.NewGuid();
@@ -91,6 +92,14 @@ namespace SalaryCalc.Models
             {
                 Id = adminRoleGuid.ToString(),
                 Name = "Administrator",
+                NormalizedName = "ADMINISTRATOR"
+            });
+
+            modelBuilder.Entity<IdentityRole>().HasData(new IdentityRole
+            {
+                Id = userRoleGuid.ToString(),
+                Name = "User",
+                NormalizedName = "USER"
             });
 
             // Создаем пользователей.
