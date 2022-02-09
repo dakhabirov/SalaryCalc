@@ -1,4 +1,4 @@
-# Корпоративный сайт магазина сотовой связи
+# Веб-портал магазина сотовой связи
 ### Стек: ASP.NET Core, Entity Framework Core, MS SQL Server, HTML, CSS, Bootstrap
 
 **Реализовано**    
